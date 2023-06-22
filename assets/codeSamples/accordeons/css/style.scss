@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+code {
+    font-size: 1rem;
+}
+main {
+    min-height: 80vh;
+    details, summary {
+        max-width: 500px;
+    }
+    #nature {
+        padding: 10px 0;
+        details {
+            background-color: #eee;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+            margin: 50px auto 0;
+            p {
+                line-height: 1.5;
+                padding: 0 25px 25px;
+                cursor: auto;
+            }
+        }
+        summary {
+            user-select: none;
+            padding: 25px;
+            font-size: 1.5rem;
+        }
+    }
+    #sophisticated {
+        background-color: #000000;
+        padding: 10px 0;
+        details {
+            background-color: #111;
+            color: #eee;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba($color: #856151, $alpha: 0.5);
+            margin: 50px auto 0;
+            p {
+                line-height: 1.5;
+                padding: 0 25px 25px;
+                cursor: auto;
+            }
+        }
+        details[open] summary::before {
+            transform: rotate(360deg);
+        }
+        summary {
+            color: #856151;
+            list-style: none;
+            user-select: none;
+            padding: 25px;
+            font-size: 1.5rem;
+            &::before {
+                content: url(../img/sarmates48.png);
+                display: inline-block;
+                padding-right: 10px;
+                transition: transform 0.5s ease-out;
+            }
+        }
+    }
+
+    #automated {
+        min-height: 830px;
+        background-color: #000000;
+        padding: 10px 0;
+        details {
+            background-color: #111;
+            color: #eee;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba($color: #a9887a, $alpha: 0.5);
+            margin: 50px auto 0;
+            transition: transform 0.2s ease;
+            p {
+                line-height: 1.5;
+                padding: 0 25px 25px;
+                cursor: auto;
+            }
+            a {
+                text-decoration: none;
+                color: #a9887a;
+            }
+            &:hover:not([open]) {
+                transform: skewX(10deg);
+                summary {
+                    color: #93624d;
+                }
+            }
+        }
+        details[open] {
+            animation: animCard 0.8s ease;
+        }
+        details[open] summary::before {
+            transform: scaleX(-1) translateX(10px);
+        }
+        summary {
+            color: #a9887a;
+            list-style: none;
+            user-select: none;
+            padding: 25px;
+            font-size: 1.5rem;
+            &::before {
+                content: url(../img/sarmates48.png);
+                display: inline-block;
+                padding-right: 10px;
+                transform-origin: center;
+                transition: transform 0.5s ease-out;
+            }
+        }
+    }
+}
+@keyframes animCard {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+// divFlex
+.col {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.pad10 {
+    padding: 10px;
+
+}
+#divFlex {
+    details {
+        background-color: #111;
+        color: #eee;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 5px 20px rgba($color: #a9887a, $alpha: 0.5);
+        margin: 50px auto 0;
+        transform: skewX(0deg);
+        transition: transform 0.2s ease;
+        div p {
+            line-height: 1.5;
+            padding: 0 25px;
+            cursor: auto;
+        }
+        div a {
+            text-decoration: none;
+            color: #a9887a;
+        }
+        &:hover:not([open]) {
+            transform: skewX(10deg);
+            summary {
+                color: #93624d;
+            }
+        }
+        div img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    details[open] {
+        animation: animCard2 0.5s ease;
+    }
+    summary {
+        color: #a9887a;
+        list-style: none;
+        user-select: none;
+        padding: 25px;
+        font-size: 1.5rem;
+        &::before {
+            content: url(../img/sarmates48.png);
+            display: inline-block;
+            padding-right: 10px;
+            transform-origin: center;
+            transition: transform 0.5s ease-out;
+        }
+    }
+}
+@keyframes animCard2 {
+    from {
+        transform: skewX(10deg);
+        // opacity: 0.5;
+    }
+    to {
+        transform: skewX(0deg);
+        // opacity: 1;
+    }
+}

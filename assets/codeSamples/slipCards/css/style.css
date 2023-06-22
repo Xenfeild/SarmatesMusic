@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #111;
+}
+header h1 {
+    color: #f00;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+}
+
+main {
+    margin-top: 3vh;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 5px;
+}
+.redOverlay {
+    background: #f00;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.card {
+    min-width: 250px;
+    height: 250px;
+    /* border: 1px solid #f00; */
+    border-radius: 0px;
+    background-color: #000;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    justify-content: center;
+    transition: transform 0.2s ease, filter 1s ease-out;
+}
+.card:hover {
+    cursor: pointer;
+    /* border-radius: 5px; */
+}
+.card h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family:'Courier New', Courier, monospace;
+    text-shadow: 1px 1px 5px #000;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+.card:hover h2 {
+    opacity: 1;
+}
+
+#card1 {
+    background-color: #f00;
+    transform-origin: bottom left;
+}
+#card1:hover {
+    transform: skew(3deg, -5deg);
+}
+
+#card2 {
+    background-color: #f0f;
+    transform-origin: bottom left;
+    perspective-origin: 100% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+}
+#card2:hover {
+    transform: rotateX(-10deg) rotateY(15deg);
+}
+
+#card3 {
+    background-image: url('../img/rockforpeople3.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom left;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+
+#card3:hover {
+    transform: rotateX(-10deg) rotateY(15deg);
+    filter: saturate(3);
+}
+
+#card4 {
+    background-image: url('../img/slipknot4.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom left;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card4:hover {
+    cursor: pointer;
+    transform: rotateX(-10deg) rotateY(15deg);
+    filter: saturate(10) hue-rotate(90deg);
+}
+
+#card5 {
+    background-image: url('../img/slipknot5.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom left;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card5:hover {
+    cursor: pointer;
+    transform: rotateX(-10deg) rotateY(15deg) translateX(10px) translateZ(50px);
+    filter: saturate(4) contrast(150%);
+}
+#card6 {
+    background-image: url('../img/slipknot6.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom right;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card6:hover {
+    cursor: pointer;
+    transform: rotateX(10deg) rotateY(15deg) translateX(-10px) translateZ(50px);
+    filter: saturate(2) contrast(150%) hue-rotate(-110deg);
+}
+
+#card7 {
+    background-image: url('../img/slipknot7.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom right;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card7:hover {
+    cursor: pointer;
+    transform: rotateX(-10deg) rotateY(15deg) translateX(10px) translateZ(50px);
+}
+#card7:hover .redOverlay {
+    opacity: 1;
+}
+
+#card8 {
+    transform-origin: bottom right;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card8:hover .redOverlay {
+    opacity: 1;
+}
+
+/* ... */
+
+#card9 {
+    background-image: url('../img/slipknot9.jpg');
+    background-size: cover;
+    background-position: center;
+    transform-origin: bottom right;
+    perspective-origin: 200% 150%;
+    perspective: 250px;
+    transform-style: preserve-3d;
+}
+#card9:hover {
+    transform: rotateX(10deg) rotateY(15deg) translateX(-10px) translateZ(50px);
+}
+#card9:hover .redOverlay {
+    opacity: 1;
+}
