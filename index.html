@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Black Savate... Fake website, just for training with images slider.">
+    <title>Sarmates-Music</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="preload" href="./fnt/parentssuck.ttf" as="font" type="font/ttf" crossorigin> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/svgBurger.css">
+</head>
+<body>
+    <header>
+        <a href="#home"><img src="img/logo/logo_sarmates_modified.svg" alt="" id="logo"></a>
+        <!-- <h2 id="logo"><a href="#home">Sarmates</a></h2> -->
+        <!-- burger -->
+        <div id="burgerIcon" 
+                onclick="showMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 200 200">
+                  <g stroke-width="7" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+          </div>
+
+        <!-- nav -->
+        <nav>
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="#live">Live</a></li>
+                <li><a href="#biography">Biographie</a></li>
+                <li><a href="#discography">Discographie</a></li>
+                <li><a href="#galeries">Galeries</a></li>
+                <li><a href="#store">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="slider">
+            </div>
+        </section>
+        <section id="news">
+          <h2>News</h2>
+          <div>
+            
+          </div>
+        </section>
+        <section id="live">
+         <h2>Live</h2>
+         <div id="">
+          <div id="liveList">
+            <div class="content">
+              <div class="preview">
+                <ul>
+                  <li>North'Fest - 11/06/2023</li>
+                  <li>bifröst - 01/10/2022</li>
+                  <li>North'Fest - 11/06/2022</li>
+                  <li>bifröst - 2019</li>
+                </ul>
+            </div>
+          </div>
+          </div>  
+         </div>
+        </section>
+        <section id="biography">
+          <h2>Biographie</h2>
+          <div class="content">
+            <div class="preview">
+              <div>
+                <p>Sarmates nous invite à un surprenant voyage sonore et visuel à travers des inspirations issues des peuples des anciennes routes de la Soie sur fond de Métal Ethnique. S'entremêlent de multiples influences du monde de la grande steppe eurasienne et une combinaison d'éléments post-apocalyptique. Sarmates chante principalement en anglais avec de nombreux passages en langues slaves, turques et perse.</p>
+                <img src="/img/Fire.jpg" alt="">
+               </div>
+              <div>
+                <img src="/img/concert-85.jpg" alt="">
+                <p>Le groupe puise son inspiratin dans les anciennes cultures nomades de l’Asie Centrale (scythes, Huns, Mongols…).
+                L’instrument oriental le plus caractéristique de leurs musique est le Saz. C’est un luth d’origine perse qui est très répandu dans la musique traditionnelle eurasienne.</p>
+              </div>
+              <div>
+                <a href="#popupBio"><button>Voir la biographie</button></a>
+              </div>
+            <div id="popupBio" class="overlay">
+              <div class="popup">
+                <h2>Biographie</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="contentBio">
+                  <div class="paragraph">
+                    <p>Sarmates nous invite à un surprenant voyage sonore et visuel à travers des inspirations issues des peuples des anciennes routes de la Soie sur fond de Métal Ethnique. S'entremêlent de multiples influences du monde de la grande steppe eurasienne et une combinaison d'éléments post-apocalyptique. Sarmates chante principalement en anglais avec de nombreux passages en langues slaves, turques et perse.</p>
+                    <img src="/img/Fire.jpg" alt="">
+                   </div>
+                  <div class="paragraph">
+                    <img src="/img/concert-85.jpg" alt="">
+                    <p>Le groupe puise son inspiratin dans les anciennes cultures nomades de l’Asie Centrale (scythes, Huns, Mongols…).
+                    L’instrument oriental le plus caractéristique de leurs musique est le Saz. C’est un luth d’origine perse qui est très répandu dans la musique traditionnelle eurasienne.</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>SARMATES a donné naissance à un nouvel instrument appelé le Sarmata : instrument hybride en quarts de tons, permettant de lier les sonorités Métal et orientales.
+                      Les texte tirent leur inspiration d’expériences de voyages, de contes anciens du Caucase, du chamanisme et du poète persan Rumi.
+                      La chanson « Scythia » est la mise en musique d’un poème de 1924 de l’écrivaine Maria Tsvetaeva.</p>
+                      <img src="/img/concert-14.jpg" alt="">
+                  </div>
+                  <div class="paragraph">
+                    <p>Laurent Broda (chanteur, ancien archéologue / fondateur du groupe Lycosia) qui a fait des fouilles en Sibérie et Mongolie a ressenti un lien fort avec ces cultures et atypiques, ainsi apprenant le chant diphonique (voix qui se dédouble) et chants gutturaux typiques des peuples de Sibérie et Mongolie.
+                      Les prémices du projet artistique SARMATES se retrouvent à travers certains titres orientalisant du groupe Lycosia tel Shaman Ceremony, Scythia, Altaï. Ces titres ont permis à Lycosia d’être lauréat du concours SACEM/ADAMI « Jeunes Talents ». Lycosia a travaillé avec des producteurs de renom tels Kit Woolven (Thin Lizzy, David Gilmour, David Bowie) et Stéphane Buriez (Loudblast, Sinsaenum). Le groupe à effectué de nombreuses tournées en France et à l’étranger avec de nombreux groupes de la scène métal : Anathema, Immortal, Cradle of Filth, Loudblast, Aqme, Eisbrecher, Cinema Strange, Death Stars…</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>En charge de la partie scénographie du groupe Sarmates Davoriin Sirok (Saz/Sarmata/chœur/Artificier/Scénographe) Metteur en scène et fondateur de la compagnie Vatra Uchronia, troupe pluridisciplinaire ayant fait des performances au Burning Man (désert du Nevada), ouverture pour Motörhead (festival Free Wheels), Tokyo Decadance (Japon)…</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </section>
+        <section id="discography">
+          <h2>Discographie</h2>
+          <div class="soon">
+            <h3>Comming soon</h3>
+        </div>
+        </section>
+        <section id="galeries">
+          <h2>Galeries</h2>
+          <div class="content">
+            <div class="clip">
+            <h3>Legion</h3>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/VF_lY4yQNVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="clip">
+              <h3>Kötüyüm</h3>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/PmH27yiXOk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+        <section id="store">
+          <h2>Store</h2>
+          <div class="soon">
+            <p>Comming soon</p>
+        </div>
+        </section>
+    </main>
+    <footer>
+      <!-- top footer social Icons -->
+      <div class="socialIcon">
+        <a href="https://www.facebook.com/sarmates"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/sarmates.music/?hl=fr"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@SarmatesMusic"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <!-- footer bottom newsletter and submenu -->
+    <div class="footerBottom">
+        <div class="newsletter">
+            <!-- <P>s'inscrire à la newsletter</P> -->
+            <label for="">Newsletter</label>
+            <form action="">
+                <input type="mail" id="mail" value="exemple@mail.com">
+                <input type="button" value="S'inscrire" id="button">
+                <div>
+                    <input type="checkbox" name="" id="">
+                    <p>Je souhaite recevoir la newsletter</p>
+                </div>
+            </form>
+        </div>
+        <nav class="bottomLink">
+            <ul>
+                <li>
+                  <a href="#contactPop">Contact</a>
+                  <div id="contactPop" class="overlay">
+                    <div class="popup">
+                      <h2>Contact</h2>
+                      <a class="close" href="#">&times;</a>  
+                      <div class="content">
+                        <form action="">
+                          <div>
+                            <label for=""></label>
+                            <input type="text" value="name">
+                            <input type="text" value="surename">
+                          </div>
+                          <div>
+                            <input type="text" value="enterprise">
+                            <input type="mail" value="e-mail">
+                          </div>
+                          <div id="send">
+                            <textarea value="message">message</textarea>
+                          
+                            <input type="button" value="Envoyer">
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+                </li>
+                <li><a href="">Mentions légales</a></li>
+                <li><a href="">CGU</a></li>
+            </ul>
+          </nav>
+    </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script type="module" src="js/slider.js"></script>
+</body>
+</html>
