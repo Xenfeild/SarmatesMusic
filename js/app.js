@@ -60,7 +60,7 @@ document.getElementById("contactForm").addEventListener('submit', function (e) {
 
   if (!surename.value) {
     contactError =" veuillez entrer votre nom"
-  }
+  } 
 
   if (!name.value) {
     contactError = "veuillez entrer votre prénom"
