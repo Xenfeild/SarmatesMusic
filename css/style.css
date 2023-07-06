@@ -8,13 +8,21 @@
 :root {
     --clr-primary: #fff;
     --clr-secondary: #ff9634;
+    --clr-secondary-50: #ff963481;
     --headerFooter-bg-color: #0d0d0d;
-    --header-height: 90px;
+    --footer-bg-color: #0d0d0d3f;
+    --header-height: 70px;
     --footer-height: 40px;
     --inset-x: 220px;
     --inset-y: 200px;
     --inset-blur: 250px;
     --title-font-family: 'Lexend Exa', sans-serif;
+    --border-radius: 5px;
+    --font-size: clamp(12px,1.5vw,2rem);
+}
+
+img{
+    width: 100%;
 }
 
 body {
@@ -40,11 +48,24 @@ h2 {
 }
 
 button{
-    /* width: clamp(100px,10vw, 100px); */
-    /* height: 30px; */
+    width: 200px;
+    font-size: var(--font-size);
+    width: clamp(100px,20vw, 400px);
     border-radius: 15px;
     border: none;
+    padding: 1.5vh;
 }
+
+input[type = submit]{
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+    font-size: clamp(12px,1vw,1rem);
+    width: clamp(100px,10w, 150px);
+    border-radius: 5px;
+    border: none;
+    padding: .4em;
+}
+
 
 button:hover{
     background-color: var(--clr-secondary);
@@ -52,8 +73,12 @@ button:hover{
     transition-duration: 0.5s;
 }
 
+h4 {
+    font-size: 1.2rem;
+}
+
 /* header */
-nav {
+#menu {
     visibility: hidden;
     position: absolute;
     right: 0;
@@ -64,12 +89,12 @@ nav {
     z-index: 10;
     font-family: var(--title-font-family);
 }
-nav ul li a {
+#menu ul li a {
     position: relative;
     text-decoration: none;
     color: var(--clr-primary);
 }
-nav ul li a::before {
+#menu ul li a::before {
     content: '';
     position: absolute;
     bottom: -3px;
@@ -80,17 +105,19 @@ nav ul li a::before {
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.7s ease-out;
 }
-nav ul li a:hover::before {
+#menu ul li a:hover::before {
     transform: translateX(0);
     opacity: 1;
 }
 
 header {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: var(--header-height);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -98,12 +125,8 @@ header {
 
 header #logo {
     width: 150px;
-    margin-left: 2rem;
 }
-#logo a {
-    text-decoration: none;
-    color: var(--clr-secondary);
-}
+
 
 a {
     text-decoration: none;
@@ -126,55 +149,211 @@ header nav ul li a{
 /* main */
 
 main {
-    height: calc(100vh - var(--header-height) - var(--footer-height));
+    height: calc(100vh - var(--header-height));
     width: 100%;
     position: absolute;
     top: var(--header-height);
     overflow-y:auto;
     scroll-behavior:smooth;
+
+    /* scroll Firefox */
+    scrollbar-color: var(--clr-secondary) transparent; /* ascenceur orangfe sur fond transparent */
+    scroll-size: thin; /* largeur du thumb */
 }
 
+/* scroll Chrome */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-secondary-50);
+    border-radius: 100rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--clr-secondary);
+}
 
 /* sections */
 
 section {
     height: 100vh;
-    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 15px 5px #000000
+}
+
+.paralax{
+    background-attachment: fixed;   
 }
 
 .content{
+    margin-top: 1rem;
     display: flex;
-    padding: clamp(2rem,10vw,5rem);
+    padding: 1rem clamp(1rem,10vw,20rem);
     justify-content: center;
     align-items: center;
 }
 
-.preview{
+.container{
+    background-color: #733b279d;
+    padding: 1rem;
+    align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family:'Hind', sans-serif;
+    width: 100%;
+    height:70vh;
+    overflow-y: scroll;
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 15px 5px #000000
+}
+
+/* temporary comming soon class */
+
+.soon{
+    margin-top: 10rem;
+    text-align: center;
+    font-size: clamp(14px, 4vw, 80px);
+    color: #fff;
     text-shadow: 4px 4px 3px #000000;
-    padding: clamp(1rem,4vw,20rem);
-    font-size: clamp(14px,1.5vw,2rem);
-    background-color: #733b2788;
+    text-transform: uppercase;
 }
 
-.preview div{
+
+/* News section */
+
+#news {
+    background-image: url(/img/singerShooting.jpg);
+}
+
+#news .content {
     display: flex;
+    flex-wrap: wrap;
 }
 
-.preview button{
-    margin-top: 1.8rem;
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 400px;
+    height: 400px;
+    margin: 1rem;
+    overflow: hidden;
+  }
+
+.newsImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+  
+  .card:hover {
+    cursor: pointer;
+    filter: saturate(5) hue-rotate(4deg);
+  }
+  
+  .containerCard {
+    padding: 2px 16px;
+    background-color: var(--clr-secondary-50);
+  }
+
+/* Live Section */
+
+#live {
+    background-image: url("/img/liveNight.jpg");
+    
+}
+
+.liveInfo {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.liveInfo hr {
+    width: 100%;
+}
+
+.liveInfo h4 {
+    margin: 1rem 0;
+}
+.liveInfo p {
+    margin: 1rem 0;
+}
+
+.liveInfo img{
+    margin: 1rem 0;
     width: 200px;
-    height: 50px;
-    font-size: 1rem;
 }
 
-.preview img {
-    display: none;
+/* Biography Secton */
+
+#biography {
+    background-image: url(/img/Sarmates_shoot-29.jpg);
 }
+
+
+ .paragraph p {
+    font-size: clamp(12px,1.5vw,2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#imgBio{
+    padding: 1.5rem;
+    width: 100%;
+}
+
+
+/* popUp Biography */
+
+.contentBio {
+    overflow-y: scroll;
+}
+
+/* discography Section */
+
+#discography {
+    background-image: url(/img/concert-14.jpg);
+}
+
+/* galeries Section */
+
+#galeries {
+    background-image: url(/img/Sarmates_fest_logo-29.jpg);
+}
+
+#galeries .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* .clip{
+    margin: 1rem;
+}
+
+/* iframe{
+    width: clamp(200px,50vw,560px);
+    height: clamp(100px,15vw,315px);
+} */ 
+
+
+
+
+
+/* store section */
+
+#store{
+    background-image: url(/img/backgroundCompress.jpg);
+}
+
 
 /* popup */
 
@@ -195,68 +374,66 @@ section {
     opacity: 1;
 }
 
-.popup h2{
-    padding: 1rem;
-}
 
 .popup {
     margin: 70px auto;
     padding: 20px;
-    background: #733b27;
+    background-color: #23191D;
     border-radius: 5px;
     width: 90%;
-    height: 75%;
+    height: 70%;
     position: relative;
     transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
   }
 
-  .popup div{
-    display: flex; 
-    /* flex-direction: column; */
-  }
+  .popup h2{
+    padding: 1rem;
+}
+
 
   .popup .close {
     position: absolute;
-    top: 20px;
+    top: 0px;
     right: 30px;
-    /* transition: all 200ms; */
+    transition: all 200ms;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: #bbb9b9;
     text-shadow: none;
   }
 
-  .contentBio{
-    display: flex;
-    flex-direction: column;
-  }
+ /* Popup Biography */
 
-  .popup .contentBio {
-    max-height: 100%;
-    overflow:scroll;
-  }
 
-  .paragraph{
-    /* display: flex; */
+  .popup .paragraph{
     padding: 1rem;
   }
+
+/* PopUp contact */
 
 #contactPop{
     display: flex;
     justify-content: center;
 }
 
+#contactPop div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 #contactPop input{
-        margin: 1rem;
-        width: clamp(90px,15vw, 250px);
-        height: 30px;
-        border: none;
-        border-radius: 10px;
-        padding-left: 10px;
+    margin: 1rem;
+    width: clamp(90px,50vw, 530px);
+    height: 30px;
+    border: none;
+    border-radius: var(--border-radius);
+    padding-left: 10px;
 }
 
 #contactPop textarea{
@@ -270,176 +447,169 @@ section {
     align-items: center;
 }
 
-
-#news {
-    background-image: url(/img/singerShooting.jpg);
-}
-
-#live {
-    background-image: url("/img/liveNight.jpg");
-}
-
-
-
-#biography {
-    background-image: url(/img/Sarmates_shoot-29.jpg);
-}
-
-#galeries {
-    background-image: url(/img/Sarmates_fest_logo-29.jpg);
-}
-
-.content #galeries {
-    display: flex;
-    flex-wrap: wrap;
-}
-.clip{
-    margin: 1rem;
-}
-
-#discography {
-    background-image: url(/img/concert-14.jpg);
-}
-
-#store{
-    background-image: url(/img/background\ compress.jpg);
-}
-
-
-.soon{
-    margin-top: 10rem;
-    text-align: center;
-    font-size: clamp(14px, 4vw, 80px);
-    color: #fff;
-    text-shadow: 4px 4px 3px #000000;
-    text-transform: uppercase;
+#contactError, #newsletterError {
+    color: #ff0000;
 }
 
 
 /* footer */
 
 footer {
+    background-color: var(--footer-bg-color);
+    backdrop-filter: blur(5px);
     font-family: var(--title-font-family);
-    position:absolute;
-    /* top: 100px; */
+    position: fixed;
     bottom: 0;
     width: 100%;
-    max-height: 130px;
-}
-
-.socialIcon{
-    background-color: #0d1a26d7;
     color: var(--main-text-color);
     display: flex;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.socialIcon i {
-    width: 0.5rem;
-    margin-left : 0.95rem;
-    margin-right : 0.95rem;
-    color: #fff;
-}
-
-.socialIcon :hover{
-    color: var(--clr-secondary);
-}
-/* footer bottom */
-.footerBottom{
-    background-color: var(--headerFooter-bg-color);
-    color: var(--main-text-color);
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 0 2em;
 }
 
-.newsletter{
-    font-size: clamp(10px, 0.5vw, 1rem);
+
+footer .socialIcon{
+    width: 100%;
+    color: var(--main-text-color);
+    display: flex;
+    justify-content: space-around;
+    /* font-size: 1.2rem; */
 }
 
-.newsletter div{
+ i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+.prev i, .next i {
+    color: #ff9634;
+    font-size: 1.2rem;
+    
+}
+
+footer .socialIcon :hover{
+    color: var(--clr-secondary);
+}
+
+
+footer .newsletter{
+    font-size: clamp(12px, 0.5vw, 1rem);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .newsletter form{
+    display: flex;
+    font-family: var(--text-font-family);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer form div {
     display: flex;
     align-items: center;
-    font-family: var(--text-font-family);
 }
 
-.newsletter #mail{
-    width: clamp(1px,15vw, 250px);
-    height: 30px;
+input[type="checkbox"]:checked {
+    background-color: #ff9634;
+}
+
+footer input{
+    margin: 0.2rem;
+}
+
+footer .newsletter #email{
+    width: 200px;
+    height: 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     padding-left: 10px;
 }
 
-.newsletter #button{
-    width: clamp(20px,10vw, 100px);
-    height: 30px;
-    border-radius: 15px;
-    border: none;
-}
 
-.newsletter #button:hover{
-    background-color: var(--clr-secondary);
-    color: #000000;
-    transition-duration: 0.5s;
-}
-
-.bottomLink nav ul li{
-    visibility: visible;
+footer .mentionsLink ul{
     display: flex;
-    padding-bottom: 1rem;
-    background-color: var(--headerFooter-bg-color);
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-
-.bottomLink ul{
-    /* display: flex; */
-    justify-content: center;
+footer .mentionsLink li{
+    font-size: clamp(12px, 0.5vw, 1.5rem);
 }
-.bottomLink li{
-    margin: clamp(10px,2vw, 2em);
-    font-size: clamp(10px, 2vw, 20px);
-}
-/* .bottomLink li:hover{
-        /* position: absolute; */
-        /* color: var(--clr-secondary);
-} */ 
 
-
-/* media queries */
-@media (min-width: 565px){
-    .preview img {
-        display: block;
-        width:clamp(200px,18vw,500px);
-        height: auto;
-        margin: 1rem;
-    }
+footer .mentionsLink li :hover{
+    color: var(--clr-secondary);
 }
+
+/* media query */
+
 @media (min-width: 785px) {
+    /* header query */
     #burgerIcon{
         display: none;
     }
-    nav {
+    #menu {
         visibility: visible !important;
         align-self: center;
         position: initial;
         width: auto;
-        background-color: #0d0d0d;
+        background-color: transparent;
     }
-    header nav ul {
+
+    header #menu ul {
         flex-direction: row;
         font-size: 1.15rem;
     }
-    .bottomLink ul{
-        display: flex;
+    
+    /* containers query */
+    .container{
+        background-color: #733b279d;
+        padding: 1rem;
+        align-items: center;
+    }
+    
+    .container .paragraph p {
+        margin: 0.5rem;
+        width: 50%;
+    }
+    .contentBio .paragraph1 p {
+        margin: 0.5rem;
+        width: 50%;
     }
 
-    .preview div{
+    .container .paragraph {
+        display: flex;
         align-items: center;
+    }
+
+    .contentBio .paragraph {
+        display: flex;
+        align-items: center;
+    }
+    
+
+    #imgBio{
+        margin: 0.5rem;
+        width: 50%;
+    }
+
+    /* footer */
+
+    footer .socialIcon{
+        width: 30%;
+    }
+
+    footer .newsletter {
+        width: 30%;
+    }
+
+    footer .mentionsLink{
+        width: 30%;
     }
 
 }

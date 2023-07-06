@@ -1,6 +1,6 @@
 const sliderContent = [
     {
-        imageUrl: "background compress.jpg",
+        imageUrl: "backgroundCompress.jpg",
         title: "Welcome to Sarmates",
         date: "27 juillet 2023",
         bouton: "",
@@ -34,41 +34,7 @@ const sliderContent = [
         bouton: "Shop now",
         boutonUrl: "#store"
     },
-    // {
-    //     imageUrl: "guitar1.jpg",
-    //     title: "Johnny Guitar ;))",
-    //     date: "6 juin 2020",
-    //     bouton: "More info",
-    //     boutonUrl: "#"
-    // },
-    // {
-    //     imageUrl: "bass1.jpg",
-    //     title: "BASS les masques !",
-    //     date: "6 juin 2022",
-    //     bouton: "More info",
-    //     boutonUrl: "#media"
-    // },
-    // {
-    //     imageUrl: "singer1.jpg",
-    //     title: "Casser la voix...",
-    //     date: "22 août 2022",
-    //     bouton: "More info",
-    //     boutonUrl: "#media"
-    // },
-    // {
-    //     imageUrl: "singer2.jpg",
-    //     title: "Nounours was very excited!",
-    //     date: "",
-    //     bouton: "",
-    //     boutonUrl: ""
-    // },
-    // {
-    //     imageUrl: "drums.mp4",
-    //     title: "Drum in action !",
-    //     date: "22 août 2022",
-    //     bouton: "",
-    //     boutonUrl: ""
-    // },
+
 ];
 
 export default sliderContent;

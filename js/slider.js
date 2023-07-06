@@ -9,8 +9,8 @@ const imgFolder = mediaSize == 'm' ? '../img/m/' : '../img/';
 if (mediaSize == 'm') {
     // modify the :root css rules
     const root = document.querySelector(':root');
-    root.style.setProperty('--inset-x', '110px');
-    root.style.setProperty('--inset-y', '100px');
+    root.style.setProperty('--inset-x', '60px');
+    root.style.setProperty('--inset-y', '50px');
     root.style.setProperty('--inset-blur', '150px');
 }
 
