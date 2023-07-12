@@ -3,7 +3,7 @@ import sliderContent from "./sliderContent.js";
 const mediaSize = window.innerWidth < 769 ? 'm' : 'xl';
 const tempoImage = 10000;
 const sliderArea = document.querySelector('.slider');
-const imgFolder = mediaSize == 'm' ? '../img/m/' : '../img/';
+const imgFolder = mediaSize == 'm' ? './img/m/' : './img/';
 
 // changing mediaSize
 if (mediaSize == 'm') {

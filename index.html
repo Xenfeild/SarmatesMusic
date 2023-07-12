@@ -49,7 +49,9 @@
         <li><a href="#biography">Biographie</a></li>
         <li><a href="#discography">Discographie</a></li>
         <li><a href="#galeries">Galeries</a></li>
-        <li><a href="#store">Store</a></li>
+        <!-- <li><a href="#store">Store</a></li> -->
+        <li class="mobile-link"><a href="legalNotice.html" class="footer-link">Mentions légales</a></li>
+        <!-- <li class="mobile-link"><a href="" class="footer-link">CGU</a></li> -->
       </ul>
     </nav>
   </header>
@@ -67,7 +69,7 @@
       <div class="content">
         <div class="card">
           <div class="newsImg">
-            <img src="/img/cd-artwork-mockup.png" alt="cd mockup" >
+            <img src="img/cd-artwork-mockup.png" alt="cd mockup" >
           </div>
           <div class="containerCard">
             <h4><b>Album bientôt displible</b></h4> 
@@ -76,7 +78,7 @@
         </div>
         <div class="card">
           <div class="newsImg">
-            <img src="/img/muckupSarmatesTshirt.jpg" alt="T-shirt mockup">
+            <img src="img/muckupSarmatesTshirt.jpg" alt="T-shirt mockup">
           </div>
           <div class="containerCard">
             <h4><b>Nouveau t-shirt en cours</b></h4> 
@@ -89,38 +91,55 @@
     <section id="live">
       <h2>Live</h2>
       <div class="content">
-        <div class="container">
+        <div class="container" id="containerMore">
           <!-- live info 1 -->
-          <div class="liveInfo"> 
-            <h4>North'fest 2023 - 76780 La Chappelle St-Ouens</h4>
-            <h4>Samedi 3 juin 2023</h4>
-            <a href="http://www.northfest.fr/">
-              <button>Voir l'évennement</button>
-            </a>
-            <img src="/img/northFest2023.jpg" alt="">
+          <div class="liveInfo">
+            <div class="liveInfoTop">
+              <h4>North'fest 2023</h4>
+              <h4>76780 La Chapelle St-Ouen</h4>
+              <h4>Samedi 3 juin 2023</h4>
+            </div>
+            <div class="liveInfoBottom">
+              <img src="img/northFest2023.jpg" alt="">
+              <a href="http://www.northfest.fr/">
+                <button>Voir l'événement</button>
+              </a>
+            </div>
             <hr>
           </div>
           <!-- live info 2 -->
           <div class="liveInfo"> 
-            <h4>Concert au Bifröst - 76000 Rouen</h4>
-            <h4>Samedi 01 Octobre 2022</h4>
-            <a href="https://www.facebook.com/events/803652970980840/">
-              <button>Voir l'évennement</button>
-            </a>
-            <img src="/img/Bifrost2022.jpg" alt="">
+            <div class="liveInfoTop">
+              <h4>Concert au Bifröst</h4>
+              <h4>76000 Rouen</h4>
+              <h4>Samedi 01 Octobre 2022</h4>
+            </div>
+            <div class="liveInfoBottom">
+              <img src="img/Bifrost2022.jpg" alt="">
+              <a href="https://www.facebook.com/events/803652970980840/">
+              <button>Voir l'événement</button>
+              </a>
+            </div>
             <hr>
           </div>
           <!-- live info 3 -->
           <div class="liveInfo"> 
-            <h4>North'fest 2022 - 76780 La Chappelle St-Ouens</h4>
-            <p>Samedi 11 juin 2022</p>
-            <a href="http://www.northfest.fr/">
-              <button>Voir l'évennement</button>
+            <div class="liveInfoTop">
+              <h4>North'fest 2022</h4> 
+              <h4>La Chappelle St-Ouens</h4>
+              <h4>Samedi 11 juin 2022</h4>
+            </div>
+            <div class="liveInfoBottom">
+              <img src="img/northFest2022.jpg" alt="">
+              <a href="http://www.northfest.fr/">
+              <button>Voir l'événement</button>
             </a>
-            <img src="/img/northFest2022.jpg" alt="">
-            <hr>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="externalBtn">
+        <button id="moreBtn">Voir plus</button>
       </div>
     </section>
 
@@ -136,26 +155,40 @@
             influences du monde de la grande steppe eurasienne et une combinaison d'éléments post-apocalyptique.
             Sarmates chante principalement en anglais avec de nombreux passages en langues slaves, turques et
             perse.</p>
-            <img src="/img/Fire.jpg" alt="" id="imgBio">
+            <img src="img/Fire.jpg" alt="" id="imgBio">
           </div>
-          <div class="paragraph">
-            <img src="/img/concert-85.jpg" alt="" id="imgBio">
-            <p>Le groupe puise son inspiratin dans les anciennes cultures nomades de l’Asie Centrale (scythes,
-              Huns, Mongols…).
-              L’instrument oriental le plus caractéristique de leurs musique est le Saz. C’est un luth d’origine
-              perse qui est très répandu dans la musique traditionnelle eurasienne.</p>
+          <a href="#popupBio"><button>Voir la biographie commplète</button></a>
+        </div>
+        <!-- Linup popUp links-->
+        <div id="lineUp">
+          <h2>Line Up</h2>
+          <div id="lineUpContent">
+            <div>
+              <h3>Laurent Broda</h3>
+              <a href="#popupSinger"><img src="img/Sarmates_fest_logo-41.jpg" alt="" id="imgLineUp"></a>
+              <p>Lead vocals / Sarmata</p>
+            </div>
+            <div>
+              <h3>Davoriin Sirok</h3>
+              <a href="#popupSarmata"><img src="img/Sarmates_fest_logo-13.jpg" alt="" id="imgLineUp"></a>
+              <p>Sarmata / Back vocals</p>
+            </div>
+            <div>
+              <h3>Jérémy Debrix</h3>
+              <a href="#popupGuitar"><img src="img/Sarmates_fest_logo-50.jpg" alt="" id="imgLineUp"></a>
+              <p>Lead Guitar</p>
+            </div>
+            <div>
+              <h3>Antonio Xenfeild</h3>
+              <a href="#popupBass"><img src="img/Sarmates_fest_logo-37.jpg" alt="" id="imgLineUp"></a>
+              <p>Bass Guitar</p>
+            </div>
+            <div>
+              <h3>Jérémy Marie</h3>
+              <a href="#popupDrum"><img src="img/Sarmates_fest_logo_drum.jpg" alt="" id="imgLineUp"></a>
+              <p>Drums</p>
+            </div>
           </div>
-          <div class="paragraph">
-            <p>SARMATES a donné naissance à un nouvel instrument appelé le Sarmata : instrument hybride en quarts
-              de tons, permettant de lier les sonorités Métal et orientales.
-              Les texte tirent leur inspiration d’expériences de voyages, de contes anciens du Caucase, du
-              chamanisme et du poète persan Rumi.
-              La chanson « Scythia » est la mise en musique d’un poème de 1924 de l’écrivaine Maria Tsvetaeva.</p>
-            <img src="/img/concert-14.jpg" alt="" id="imgBio">
-          </div>
-          <!-- Linup popUp links-->
-          <h3>Line Up</h3>
-          <a href="#popupBio"><img src="/img/Sarmates_fest_logo-41.jpg" alt="" id="imgBio"></a>
         </div>
       </div>
     </section>
@@ -174,81 +207,163 @@
       <h2>Galeries</h2>
       <div class="content">
         <div id="clip">
+          <!-- <h2>clip</h2> -->
           <iframe src="https://www.youtube.com/embed/VF_lY4yQNVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <iframe src="https://www.youtube.com/embed/PmH27yiXOk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div> 
-        <!-- <div id="photos">
-          <img src="/img/Sarmates_fest_logo-13.jpg" alt="">
-          <img src="/img/Sarmates_fest_logo-45.jpg" alt="">
-          <img src="/img/Sarmates_fest_logo-29.jpg" alt="">
-          <img src="/img/singerShooting.jpg" alt="">
+        <div id="photos">
+          <!-- <h2>photos</h2> -->
+          <!-- <img src="img/Sarmates_fest_logo-13.jpg" alt="">
+          <img src="img/Sarmates_fest_logo-45.jpg" alt="">
+          <img src="img/Sarmates_fest_logo-29.jpg" alt="">
+          <img src="img/singerShooting.jpg" alt="">
         </div> -->
     </section>
 
   <!-- store section -->
-    <section id="store" class="paralax">
-      <h2>Store</h2>
+    <!-- <section id="store" class="paralax">
+      <h2>Store</h2> -->
       <!-- coming soon -->
-      <div class="soon">
+      <!-- <div class="soon">
         <p>Coming soon</p>
       </div>
     </section>
-  </main>
+  </main> -->
 
   <!-- popupBiographie -->
   <div id="popupBio" class="overlay">
     <div class="popup">  
-      <h2>Laurent Broda</h2>
+      <h2>Biographie</h2>
       <a class="close" href="#">&times;</a>
         <!-- text Biography -->
       <div class="contentBio">
         <div class="paragraph">
-          <img src="/img/concert-85.jpg" alt="" id="imgBio">
-          <p>Laurent Broda (chanteur, ancien archéologue / fondateur du groupe Lycosia) qui a fait des fouilles
-            en Sibérie et Mongolie a ressenti un lien fort avec ces cultures et atypiques, ainsi apprenant le
-            chant diphonique (voix qui se dédouble) et chants gutturaux typiques des peuples de Sibérie et
-            Mongolie.
-            Les prémices du projet artistique SARMATES se retrouvent à travers certains titres orientalisant du
-            groupe Lycosia tel Shaman Ceremony, Scythia, Altaï. Ces titres ont permis à Lycosia d’être lauréat
-            du concours SACEM/ADAMI « Jeunes Talents ». Lycosia a travaillé avec des producteurs de renom tels
-            Kit Woolven (Thin Lizzy, David Gilmour, David Bowie) et Stéphane Buriez (Loudblast, Sinsaenum). Le
-            groupe à effectué de nombreuses tournées en France et à l’étranger avec de nombreux groupes de la
-            scène métal : Anathema, Immortal, Cradle of Filth, Loudblast, Aqme, Eisbrecher, Cinema Strange,
-            Death Stars…</p>
+          <p>Sarmates nous invite à un surprenant voyage sonore et visuel à travers des inspirations issues des
+            peuples des anciennes routes de la Soie sur fond de Métal Ethnique. S'entremêlent de multiples
+            influences du monde de la grande steppe eurasienne et une combinaison d'éléments post-apocalyptique.
+            Sarmates chante principalement en anglais avec de nombreux passages en langues slaves, turques et
+            perse.</p>
+            <img src="img/Fire.jpg" alt="" id="imgBio">
+          </div>
+          <div class="paragraph">
+            <img src="img/concert-85.jpg" alt="" id="imgBio">
+            <p>Le groupe puise son inspiratin dans les anciennes cultures nomades de l’Asie Centrale (scythes,
+              Huns, Mongols…).
+              L’instrument oriental le plus caractéristique de leurs musique est le Saz. C’est un luth d’origine
+              perse qui est très répandu dans la musique traditionnelle eurasienne.</p>
+          </div>
+          <div class="paragraph">
+            <p>SARMATES a donné naissance à un nouvel instrument appelé le Sarmata : instrument hybride en quarts
+              de tons, permettant de lier les sonorités Métal et orientales.
+              Les texte tirent leur inspiration d’expériences de voyages, de contes anciens du Caucase, du
+              chamanisme et du poète persan Rumi.
+              La chanson « Scythia » est la mise en musique d’un poème de 1924 de l’écrivaine Maria Tsvetaeva.</p>
+            <img src="img/concert-14.jpg" alt="" id="imgBio">
         </div>    
       </div>
     </div>
   </div>
+
+  <!-- popup line up -->
+
+  <!-- Popup Singer Laurent Broda-->
+  <div id="popupSinger" class="overlay">
+    <div class="popup">  
+      <h2>Laurent Broda</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="contentBio">
+        <div class="paragraph">
+          <img src="img/Sarmates_fest_logo-41.jpg" alt="Laurent Broda">
+          <p>Laurent Broda (chanteur, ancien archéologue / fondateur du groupe Lycosia) qui a fait des fouilles en Sibérie et Mongolie a ressenti un lien fort avec ces cultures et atypiques, ainsi apprenant le chant diphonique (voix qui se dédouble) et chants gutturaux typiques des peuples de Sibérie et Mongolie.
+          Les prémices du projet artistique SARMATES se retrouvent à travers certains titres orientalisant du groupe Lycosia tel Shaman Ceremony, Scythia, Altaï. Ces titres ont permis à Lycosia d’être lauréat du concours SACEM/ADAMI « Jeunes Talents ». Lycosia a travaillé avec des producteurs de renom tels Kit Woolven (Thin Lizzy, David Gilmour, David Bowie) et Stéphane Buriez (Loudblast, Sinsaenum). Le groupe à effectué de nombreuses tournées en France et à l’étranger avec de nombreux groupes de la scène métal : Anathema, Immortal, Cradle of Filth, Loudblast, Aqme, Eisbrecher, Cinema Strange, Death Stars…</p>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <!-- Popup Sarmata Davoriin Sirok  -->
+  <div id="popupSarmata" class="overlay">
+    <div class="popup">  
+      <h2>Davoriin Sirok</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="contentBio">
+        <div class="paragraph">
+          <img src="img/Sarmates_fest_logo-13.jpg" alt="Davoriin Sirok">
+          <p>En charge de la partie scénographie du groupe Sarmates Davoriin Sirok (Saz/Sarmata/chœur/Artificier/Scénographe) Metteur en scène et fondateur de la compagnie Vatra Uchronia, troupe pluridisciplinaire ayant fait des performances au Burning Man (désert du Nevada), ouverture pour Motörhead (festival Free Wheels), Tokyo Decadance (Japon)…</p> 
+        </div>   
+      </div>
+    </div>
+  </div>  
+   <!--popup Guitar Jeremy Debrix -->
+  <div id="popupGuitar" class="overlay">
+    <div class="popup">  
+      <h2>Jérémy Debrix</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="contentBio">
+        <div class="paragraph">
+          <img src="img/Sarmates_fest_logo-50.jpg" alt="Jérémy Debrix">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci corrupti officiis fuga autem totam? Qui reiciendis vero veritatis asperiores illum quam nihil perferendis dolore? Accusantium debitis soluta fugiat ex error?</p> 
+        </div>   
+      </div>
+    </div>
+  </div> 
+  <!-- popup Bass Guitar Antonio Xenfeild -->
+   <div id="popupBass" class="overlay">
+    <div class="popup">  
+      <h2>Antonio Xenfeild</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="contentBio">
+        <div class="paragraph">
+          <img src="img/Sarmates_fest_logo-37.jpg" alt="Antonio Torres">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis magnam quam natus atque porro veritatis consequuntur sunt facere eaque, ipsam modi, error earum sint beatae, totam similique aliquid placeat corrupti.</p>
+        </div>    
+      </div>
+    </div>
+  </div> 
+  <!-- popup Drum Jeremy Marie -->
+  <div id="popupDrum" class="overlay">
+    <div class="popup">  
+      <h2>Jérémy Marie</h2>
+      <a class="close" href="#">&times;</a>
+      <div class="contentBio">
+        <div class="paragraph">
+          <img src="img/Sarmates_fest_logo_drum.jpg" alt="Jérémy Marie">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis magnam quam natus atque porro veritatis consequuntur sunt facere eaque, ipsam modi, error earum sint beatae, totam similique aliquid placeat corrupti.</p>
+        </div>   
+      </div>
+    </div>
+  </div>
+
   <!-- Contact PopUp -->
   <div id="contactPop" class="overlay">
     <div class="popup">
       <h2>Contact</h2>
       <a class="close" href="#">&times;</a>
       <div class="content">
-        <form action="" id="contactForm">
+        <form action="php/contact.php" id="contactForm" method="POST">
           <div>
             <label for="surename">Nom *</label>
-            <input type="text" id="surename" placeholder="Nom">
+            <input type="text" id="surename" name="surename" placeholder="Nom">
             <label for="name">Prénom *</label>
-            <input type="text" id="name" placeholder="Prenom">
+            <input type="text" id="name" name="name"  placeholder="Prenom">
           </div>
           <div>
             <label for="society">société</label>
-            <input type="text" placeholder="enterprise" id="society">
+            <input type="text" placeholder="enterprise" id="society" name="society">
             <label for="emailContact">Email *</label>
-            <input type="email"  placeholder="exemple@email.com" id="emailContact">
+            <input type="email"  placeholder="exemple@email.com" id="emailContact" name="email">
           </div>
           <div id="send">
             <label for="textarea">message *</label>
-            <textarea placeholder="Votre message" id="message">message</textarea>
-            <input type="submit" value="Envoyer" id="contactSubmit">
+            <textarea placeholder="Votre message" id="message" name="message">message</textarea>
+            <input type="submit" value="Envoyer" id="contactSubmit" name="contactSubmit">
             <p>* Champs obligatoire</p>
-            <p style="color:red;" id="contactError"></p>
           </div>
         </form>
       </div>
     </div>
+    <div id="contactInfo"></div>
   </div>
+  
 
   <!-- footer -->
   <footer>
@@ -263,12 +378,14 @@
     <div class="newsletter">
       <p>Newsletter</p>
       <!-- newsletter form -->
-      <form id="newsletterForm">
+      <form action="php/newsletter.php" id="newsletterForm" method="post">
         <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email">
-        <label for="checkbox">Je souhaite m'inscrire à la newsletter</label>
-        <input type="checkbox" name="checkNewsletter" id="checkNewsletter">
-        <input type="submit" value="S'inscrire" id="submit">
+        <input type="email" id="email" name="email">
+        <div>
+          <label for="checkbox">Je souhaite m'inscrire à la newsletter</label>
+          <input type="checkbox" name="checkNewsletter" id="checkNewsletter">
+          <input type="submit" value="S'inscrire" id="submit">
+        </div>
       </form>
       <!-- error message -->
       <p id="newsletterError"></p>
@@ -278,14 +395,17 @@
       <ul>
         <li>           
         </li>
-        <li><a href="">Mentions légales</a></li>
-        <li><a href="">CGU</a></li>
+        <li><a href="legalNotice.html" class="footer-link">Mentions légales</a></li>
+        <!-- <li><a href="" class="footer-link">CGU</a></li> -->
       </ul>
     </nav>
   </footer>
+  
 
   <script src="js/app.js"></script>
   <script type="module" src="js/slider.js"></script>
+  <script src="php/pdo.php"></script>
+
 </body>
 
 </html>

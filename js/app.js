@@ -3,8 +3,6 @@ const burger = document.querySelector('#burgerIcon');
 
 
 
-
-
 nav.addEventListener('click', () => {
     showMenu();
 });
@@ -16,37 +14,53 @@ const showMenu = () => {
     } else {
         nav.style.visibility='visible';
         burger.classList.add('active');
-    }
-    
+    }   
 }
+
+// more button
+var moreBtn = document.getElementById('moreBtn');
+var containerMore = document.getElementById('containerMore');
+
+moreBtn.addEventListener('click', function() {
+  containerMore.classList.toggle('expand');
+  
+  if (containerMore.classList.contains('expand')) {
+    moreBtn.textContent = 'Voir moins';
+  } else {
+    moreBtn.textContent = 'Voir plus';
+  }
+});
 
 // validate Newsletter
 
-document.getElementById("newsletterForm").addEventListener('submit', function (send) {
-  send.preventDefault();
+document.getElementById("newsletterForm").addEventListener('submit', function (e) {
+  e.preventDefault();
   var error;
   var email = document.getElementById('email');
   var checkNewsletter = document.getElementById("checkNewsletter");
 
   if (!email.value) {
-    error = "mettez votre adresse e-mail pour recevoir la newsletter"
+    error = "Mettez votre adresse e-mail pour recevoir la newsletter";
   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-    error = ("Veuillez entrer une adresse e-mail valide");
+    error = "Veuillez entrer une adresse e-mail valide";
   }
 
   if (!checkNewsletter.checked) {
-    error = "veuillez valider la case de confirmation pour recevoir votre newsletter"
+    error = "Veuillez valider la case de confirmation pour recevoir votre newsletter";
   }
 
-  if (error){ 
-    send.preventDefault();
-    document.getElementById("newsletterError").innerHTML = error;
+  if (error) { 
+    e.preventDefault();
+    alert(error);
     return false;
   } else {
-
-  alert("Vous êtes inscrit à la newsletter")
+    // Si la vérification est réussie, vous pouvez autoriser la soumission
+    this.removeEventListener('submit', arguments.callee);
+    this.submit();
+    alert("Vous êtes inscrit à la newsletter");
+    
   }
-})
+});
 
 
 // validate Contact
@@ -55,33 +69,33 @@ document.getElementById("contactForm").addEventListener('submit', function (e) {
   e.preventDefault();
   var contactError;
   var email = document.getElementById('emailContact');
-  var surename = document.getElementById('surename') 
-  var name = document.getElementById('name') 
+  var surename = document.getElementById('surename');
+  var name = document.getElementById('name');
+  var message = document.getElementById('message');
 
   if (!surename.value) {
-    contactError =" veuillez entrer votre nom"
+    contactError = "Veuillez entrer votre nom";
   } 
 
   if (!name.value) {
-    contactError = "veuillez entrer votre prénom"
+    contactError = "Veuillez entrer votre prénom";
   }
 
   if (!email.value) {
-    contactError = "mettez votre adresse e-mail pour envoyer votre message"
+    contactError = "Mettez votre adresse e-mail pour envoyer votre message";
   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-    contactError = ("Veuillez entrer une adresse e-mail valide");
+    contactError = "Veuillez entrer une adresse e-mail valide";
   }
 
-
-  if (contactError){ 
+  if (contactError) { 
     e.preventDefault();
-    document.getElementById("contactError").innerHTML = contactError;
+    alert(contactError);
     return false;
   } else {
-
-  alert("Votre message a bien été envoyé")
+    // Si la vérification est réussie, vous pouvez autoriser la soumission
+    this.removeEventListener('submit', arguments.callee);
+    this.submit();
+    alert("Votre message a été envoyé avec succès !");
   }
-})
+});
 
-
-// carousel

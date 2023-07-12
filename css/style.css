@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    align-items: center;
 }
 
 :root {
@@ -45,15 +46,16 @@ h2 {
     font-size: clamp(22px, 10vw, 3rem);
     font-family: var(--title-font-family);
     text-shadow: 4px 4px 3px #000000;
+    font-weight: 400;
 }
 
 button{
-    width: 200px;
     font-size: var(--font-size);
-    width: clamp(100px,20vw, 400px);
     border-radius: 15px;
     border: none;
     padding: 1.5vh;
+    background-color: var(--clr-secondary);
+    color: #000000;
 }
 
 input[type = submit]{
@@ -68,8 +70,8 @@ input[type = submit]{
 
 
 button:hover{
-    background-color: var(--clr-secondary);
-    color: #000000;
+    background-color: #23191d;
+    color: #fff;
     transition-duration: 0.5s;
 }
 
@@ -176,7 +178,7 @@ main {
 /* sections */
 
 section {
-    height: 100vh;
+    height: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -187,15 +189,14 @@ section {
     background-attachment: fixed;   
 }
 
-.content{
+.content {
     margin-top: 1rem;
     display: flex;
-    padding: 1rem clamp(1rem,10vw,20rem);
     justify-content: center;
     align-items: center;
-}
-
-.container{
+  }
+  
+  .container {
     background-color: #733b279d;
     padding: 1rem;
     align-items: center;
@@ -203,11 +204,28 @@ section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height:70vh;
-    overflow-y: scroll;
+    height: 70vh;
+    transition: height 0.5s;
     backdrop-filter: blur(5px);
-    box-shadow: 5px 5px 15px 5px #000000
-}
+    box-shadow: 5px 5px 15px 5px #000000;
+    overflow: hidden;
+  }
+  
+  .container.expand {
+    height: auto;
+  }
+
+
+  .externalBtn {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .externalBtn button {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+  }
 
 /* temporary comming soon class */
 
@@ -220,78 +238,151 @@ section {
     text-transform: uppercase;
     background-color: var(--clr-secondary-50);
 }
-
+#home {
+    height: 100vh;
+}
 
 /* News section */
 
 #news {
-    background-image: url(/img/singerShooting.jpg);
+    background-image: url(../img/singerShooting.jpg);
+    min-height: 100vh;
 }
 
 #news .content {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: clamp(100px,50vw, 200px);
-    margin: .5rem;
+#news .content .card {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    /* transition: 0.3s; */
+    width: 200px;
+    padding: .5rem;
+    /* margin: .5rem; */
     /* overflow: hidden; */
-  }
+}
 
-.newsImg img{
+.newsImg img {
+    width: 100%;
     object-fit: cover;
 }
-  
-  
-  .card:hover {
+
+
+.card:hover {
     cursor: pointer;
-    filter: saturate(5) hue-rotate(4deg);
-  }
-  
-  .containerCard {
-    padding: 2px 16px;
-    background-color: var(--clr-secondary-50);
-  }
-
-/* Live Section */
-
-#live {
-    background-image: url("/img/liveNight.jpg");
-    
+    /* filter: saturate(5) hue-rotate(4deg); */
+    border: 2px solid var(--clr-secondary);
 }
 
-.liveInfo {
+.containerCard {
+    padding: 2px 16px;
+    background-color: var(--clr-secondary-50);
+}
+
+.containerCard h4{
+    font-size: 0.9rem;
+    text-align: center;
+}
+.containerCard p{
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+/* Live Section */
+#live {
+    background-image: url("../img/liveNight.jpg");
+    min-height: 100vh;
+  }
+  
+  .liveInfo {
     margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
-}
-
-.liveInfo hr {
+    text-align: center;
+    display: flex;
+  }
+  .liveInfoBottom{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .liveInfo hr {
     width: 100%;
-}
-
-.liveInfo h4 {
+  }
+  
+  .liveInfo h4 {
+    margin: .5rem 0;
+  }
+  
+  .liveInfo p {
     margin: 1rem 0;
-}
-.liveInfo p {
+  }
+  
+  .liveInfo img {
     margin: 1rem 0;
-}
-
-.liveInfo img{
-    margin: 1rem 0;
-    width: 200px;
-}
+    width: 130px;
+  }
+  
 
 /* Biography Secton */
 
 #biography {
-    background-image: url(/img/Sarmates_shoot-29.jpg);
+    background-image: url(../img/Sarmates_shoot-29.jpg);
+    height: auto;
+}
+
+#biography .content{
+    flex-direction: column;
+}
+
+#biography .content .container{
+    height: 70vh
+}
+
+#biography #lineUp #lineUpContent{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+#biography #lineUp #lineUpContent div{
+    margin: 1rem;
+    padding: .5rem;
+    background-color: var(--clr-secondary-50);
+    backdrop-filter: blur(5px);
+}
+
+#biography #lineUp h3 {
+    margin: 1rem 0;
+    text-shadow: 4px 4px 3px #000000
+}
+
+#biography #lineUp img{
+    width: clamp(200px, 30vh, 350px);
+    height: clamp(200px, 30vh, 350px);
+    object-fit: cover;
+}
+
+#biography #lineUp p{
+    margin-bottom: 1rem;
+    text-shadow: 4px 4px 3px #000000
+}
+
+#biography #lineUp #lineUpContent div:hover{
+    cursor: pointer;
+    /* filter: saturate(5) hue-rotate(4deg); */
+    border: 2px solid var(--clr-secondary);
+}
+
+#biography #lineUp #lineUpContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 
@@ -318,33 +409,44 @@ section {
 /* discography Section */
 
 #discography {
-    background-image: url(/img/concert-14.jpg);
+    background-image: url(../img/concert-14.jpg);
+    min-height: 100vh;
 }
 
 /* galeries Section */
 
 #galeries {
-    background-image: url(/img/Sarmates_fest_logo-29.jpg);
+    background-image: url(../img/Sarmates_fest_logo-29.jpg);
+    min-height: 100vh;
+}
+
+#galeries .content {
+    display: flex;
+    flex-direction: column;
 }
 
 #clip {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 #clip iframe {
     width: clamp(200px, 50vw, 500px);
-    height: clamp(50px, 20vw, 300px);
+    height: clamp(150px, 20vw, 300px);
     margin: 0.5rem;
 }
 
 
 #photos img {
     width: 200px;
+    height: 150px;
+    object-fit: cover;
 }
 
 #photos{
+    margin-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -355,8 +457,10 @@ section {
 /* store section */
 
 #store{
-    background-image: url(/img/backgroundCompress.jpg);
+    background-image: url(../img/backgroundCompress.jpg);
+    min-height: 100vh;
 }
+
 
 
 /* popup */
@@ -412,6 +516,13 @@ section {
     text-shadow: none;
   }
 
+ 
+
+  /* #popupSinger img{
+    width: 50%;
+  }  */
+
+
  /* Popup Biography */
 
 
@@ -434,7 +545,7 @@ section {
 
 #contactPop input{
     margin: 1rem;
-    width: clamp(90px,50vw, 530px);
+    width: clamp(200px,50vw, 530px);
     height: 30px;
     border: none;
     border-radius: var(--border-radius);
@@ -442,7 +553,7 @@ section {
 }
 
 #contactPop textarea{
-    width: clamp(1px, 50vw, 530px);
+    width: clamp(200px, 50vw, 530px);
     height: 150px;
 }
 
@@ -456,6 +567,10 @@ section {
     color: #ff0000;
 }
 
+#legalNotice{
+    background-image: url(../img/backgroundCompress.jpg);
+    height: 100vh;
+}
 
 /* footer */
 
@@ -515,6 +630,10 @@ footer .newsletter form{
     flex-wrap: wrap;
 }
 
+footer .newsletter form div{
+    display: block
+}
+
 footer form div {
     display: flex;
     align-items: center;
@@ -529,7 +648,7 @@ footer input{
 }
 
 footer .newsletter #email{
-    width: 200px;
+    /* width: 200px; */
     height: 20px;
     border: none;
     border-radius: var(--border-radius);
@@ -545,11 +664,17 @@ footer .mentionsLink ul{
 
 footer .mentionsLink li{
     font-size: clamp(12px, 0.5vw, 1.5rem);
+    margin: 0 .5rem;
 }
 
 footer .mentionsLink li :hover{
     color: var(--clr-secondary);
 }
+
+footer .footer-link {
+    display: none;
+}
+
 
 /* media query */
 
@@ -570,12 +695,16 @@ footer .mentionsLink li :hover{
         flex-direction: row;
         font-size: 1.15rem;
     }
+    .mobile-link{
+        display: none;
+    }
     
     /* containers query */
     .container{
         background-color: #733b279d;
         padding: 1rem;
         align-items: center;
+        width: 90%;
     }
     
     .container .paragraph p {
@@ -592,16 +721,93 @@ footer .mentionsLink li :hover{
         align-items: center;
     }
 
+    .liveInfoTop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .liveInfoBottom{
+        width: 100%;
+        margin-top: 5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
     .contentBio .paragraph {
         display: flex;
         align-items: center;
     }
-    
 
+    #biography .content .container{
+        height: 60vh
+    }
+    
+    
+    #news .content .card {
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+        /* transition: 0.3s; */
+        width: 400px;
+        aspect-ratio: 1;
+        padding: .5rem;
+        /* margin: .5rem; */
+        /* overflow: hidden; */
+    }
+    .containerCard h4{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .containerCard p{
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .container .paragraph {
+        display: flex;
+        align-items: center;
+    }
+
+    .contentBio .paragraph {
+        display: flex;
+        align-items: center;
+    }
+ 
     #imgBio{
         margin: 0.5rem;
         width: 50%;
     }
+
+    /* popup LineUp */
+
+    #popupSinger img{
+        width: 50%;
+        margin: 1rem;
+    }
+    
+    #popupSarmata img{
+        width: 50%;
+        margin: 1rem;
+    }
+
+    #popupGuitar img{
+        width: 50%;
+        margin: 1rem;
+    }
+
+    #popupBass img{
+        width: 50%;
+        margin: 1rem;
+    }
+
+    #popupDrum img{
+        width: 50%;
+        margin: 1rem;
+    }
+
+    
+
 
     /* footer */
 
@@ -617,4 +823,7 @@ footer .mentionsLink li :hover{
         width: 30%;
     }
 
+    footer .footer-link {
+        display: block;
+    } 
 }
