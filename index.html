@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Black Savate... Fake website, just for training with images slider.">
+  <meta name="description" content="Sarmates site officiel Index">
   <title>Sarmates-Music</title>
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@
         <li><a href="#discography">Discographie</a></li>
         <li><a href="#galeries">Galeries</a></li>
         <!-- <li><a href="#store">Store</a></li> -->
-        <li class="mobile-link"><a href="legalNotice.html" class="footer-link">Mentions légales</a></li>
+        <li class="mobile-link"><a href="pages/legalNotice.html" class="footer-link">Mentions légales</a></li>
         <!-- <li class="mobile-link"><a href="" class="footer-link">CGU</a></li> -->
       </ul>
     </nav>
@@ -206,18 +206,34 @@
     <section id="galeries" class="paralax">
       <h2>Galeries</h2>
       <div class="content">
+        <!-- clip -->
+        <h3>Clip</h3>
         <div id="clip">
-          <!-- <h2>clip</h2> -->
-          <iframe src="https://www.youtube.com/embed/VF_lY4yQNVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/PmH27yiXOk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/VF_lY4yQNVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/PmH27yiXOk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div> 
-        <div id="photos">
-          <!-- <h2>photos</h2> -->
-          <!-- <img src="img/Sarmates_fest_logo-13.jpg" alt="">
-          <img src="img/Sarmates_fest_logo-45.jpg" alt="">
-          <img src="img/Sarmates_fest_logo-29.jpg" alt="">
-          <img src="img/singerShooting.jpg" alt="">
-        </div> -->
+        <!-- photo -->
+        <h3>Photo</h3>
+        <div class="gallery">
+          <div class="galleryNav">
+              <button onclick="previous()" class="galleryNavLeft"><i class="fa-solid fa-circle-arrow-left"></i></button>
+              <button onclick="next()" class="galleryNavRight"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
+          </div>
+          <div class="galleryContent">
+            <div class="galleryContentItems">
+                <img src="img/Sarmates_fest_logo-15.jpg" alt="alt description" id="" onclick="openPopup(this.src)">
+            </div>
+            <div class="galleryContentItems">
+                <img src="img/Sarmates_fest_logo-50.jpg" alt="" onclick="openPopup(this.src)">
+            </div>
+            <div class="galleryContentItems">
+                <img src="img/singerShooting.jpg" alt="" onclick="openPopup(this.src)">
+            </div>
+            <div class="galleryContentItems">
+                <img src="img/Sarmates_fest_logo-37.jpg" alt="" onclick="openPopup(this.src)">
+            </div>
+        </div>
+      </div>
     </section>
 
   <!-- store section -->
@@ -333,6 +349,16 @@
     </div>
   </div>
 
+  <!-- newsletter popup -->
+  <div id="popupNewsletter" class="overlay">
+    <div class="popup2">
+    <a class="close" href="#">&times;</a>
+      <div class="content">
+        <iframe width="540" height="605" src="https://34c97f4b.sibforms.com/serve/MUIFAB2884Ld5A4DRjimRl1u5NWo8jh3nJJSUN9GVoMm8eGSc34nkhiml7KOCznjUqo_25JeH4UNLKI0cBsg6X7Lej12yHt0ReXp1u_Ox687je_vB0Sb7xPE7i0T27UvwBFY8Cp7ExqoEYPUYwjlahvn_WLGtRdA5nSums5HNNYBnLrls62DrxTXy39TFUWYKe7maZySXLR2cMnL" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact PopUp -->
   <div id="contactPop" class="overlay">
     <div class="popup">
@@ -353,11 +379,12 @@
             <input type="email"  placeholder="exemple@email.com" id="emailContact" name="email">
           </div>
           <div id="send">
-            <label for="textarea">message *</label>
-            <textarea placeholder="Votre message" id="message" name="message">message</textarea>
+            <label for="message">message *</label>
+            <textarea  id="message" name="message">message</textarea>
             <input type="submit" value="Envoyer" id="contactSubmit" name="contactSubmit">
             <p>* Champs obligatoire</p>
           </div>
+          <div id="reponseServeur"></div>
         </form>
       </div>
     </div>
@@ -376,32 +403,19 @@
     </div>
     <!-- newsletter div -->
     <div class="newsletter">
-      <p>Newsletter</p>
-      <!-- newsletter form -->
-      <form action="php/newsletter.php" id="newsletterForm" method="post">
-        <label for="email">Adresse e-mail :</label>
-        <input type="email" id="email" name="email">
-        <div>
-          <label for="checkbox">Je souhaite m'inscrire à la newsletter</label>
-          <input type="checkbox" name="checkNewsletter" id="checkNewsletter">
-          <input type="submit" value="S'inscrire" id="submit">
-        </div>
-      </form>
-      <!-- error message -->
-      <p id="newsletterError"></p>
+      <a href="#popupNewsletter"><p>Newsletter</p></a>
     </div>
     <!-- legal mentions -->
     <nav class="mentionsLink">
       <ul>
         <li>           
         </li>
-        <li><a href="legalNotice.html" class="footer-link">Mentions légales</a></li>
+        <li><a href="pages/legalNotice.html" class="footer-link">Mentions légales</a></li>
         <!-- <li><a href="" class="footer-link">CGU</a></li> -->
       </ul>
     </nav>
   </footer>
-  
-
+  <script src="js/contact.js"></script>
   <script src="js/app.js"></script>
   <script type="module" src="js/slider.js"></script>
   <script src="php/pdo.php"></script>

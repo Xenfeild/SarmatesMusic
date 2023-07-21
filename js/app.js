@@ -18,8 +18,8 @@ const showMenu = () => {
 }
 
 // more button
-var moreBtn = document.getElementById('moreBtn');
-var containerMore = document.getElementById('containerMore');
+const moreBtn = document.getElementById('moreBtn');
+const containerMore = document.getElementById('containerMore');
 
 moreBtn.addEventListener('click', function() {
   containerMore.classList.toggle('expand');
@@ -33,69 +33,119 @@ moreBtn.addEventListener('click', function() {
 
 // validate Newsletter
 
-document.getElementById("newsletterForm").addEventListener('submit', function (e) {
-  e.preventDefault();
-  var error;
-  var email = document.getElementById('email');
-  var checkNewsletter = document.getElementById("checkNewsletter");
+// document.getElementById("sib-form").addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   var error;
+//   var email = document.getElementById('EMAIL');
+//   var checkNewsletter = document.getElementById("OPT_IN");
 
-  if (!email.value) {
-    error = "Mettez votre adresse e-mail pour recevoir la newsletter";
-  } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-    error = "Veuillez entrer une adresse e-mail valide";
-  }
+//   if (!email.value) {
+//     error = "Mettez votre adresse e-mail pour recevoir la newsletter";
+//   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
+//     error = "Veuillez entrer une adresse e-mail valide";
+//   }
 
-  if (!checkNewsletter.checked) {
-    error = "Veuillez valider la case de confirmation pour recevoir votre newsletter";
-  }
+//   if (!checkNewsletter.checked) {
+//     error = "Veuillez valider la case de confirmation pour recevoir votre newsletter";
+//   }
 
-  if (error) { 
-    e.preventDefault();
-    alert(error);
-    return false;
-  } else {
-    // Si la vérification est réussie, vous pouvez autoriser la soumission
-    this.removeEventListener('submit', arguments.callee);
-    this.submit();
-    alert("Vous êtes inscrit à la newsletter");
+//   if (error) { 
+//     // e.preventDefault();
+//     alert(error);
+//     return false;
+//   } else {
+//     // Si la vérification est réussie, vous pouvez autoriser la soumission
+//     this.removeEventListener('submit', arguments.callee);
+//     this.submit();
+//     alert("Vous êtes inscrit à la newsletter");
     
-  }
-});
+//   }
+// });
 
 
 // validate Contact
 
-document.getElementById("contactForm").addEventListener('submit', function (e) {
-  e.preventDefault();
-  var contactError;
-  var email = document.getElementById('emailContact');
-  var surename = document.getElementById('surename');
-  var name = document.getElementById('name');
-  var message = document.getElementById('message');
+// document.getElementById("contactForm").addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   var contactError;
+//   var email = document.getElementById('emailContact');
+//   var surename = document.getElementById('surename');
+//   var name = document.getElementById('name');
+//   var message = document.getElementById('message');
 
-  if (!surename.value) {
-    contactError = "Veuillez entrer votre nom";
-  } 
+//   if (!surename.value) {
+//     contactError = "Veuillez entrer votre nom";
+//   } 
 
-  if (!name.value) {
-    contactError = "Veuillez entrer votre prénom";
-  }
+//   if (!name.value) {
+//     contactError = "Veuillez entrer votre prénom";
+//   }
 
-  if (!email.value) {
-    contactError = "Mettez votre adresse e-mail pour envoyer votre message";
-  } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-    contactError = "Veuillez entrer une adresse e-mail valide";
-  }
+//   if (!email.value) {
+//     contactError = "Mettez votre adresse e-mail pour envoyer votre message";
+//   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
+//     contactError = "Veuillez entrer une adresse e-mail valide";
+//   }
 
-  if (contactError) { 
-    e.preventDefault();
-    alert(contactError);
-    return false;
+//   if (contactError) { 
+//     e.preventDefault();
+//     alert(contactError);
+//     return false;
+//   } else {
+//     // Si la vérification est réussie, vous pouvez autoriser la soumission
+//     this.removeEventListener('submit', arguments.callee);
+//     this.submit();
+//     alert("Votre message a été envoyé avec succès !");
+//   }
+// });
+
+// carousel gallery
+
+function previous() {
+  const galleryContent = document.querySelector('.galleryContent');
+  const widthGallery = document.querySelector('.gallery').offsetWidth;
+  const scrollLeft = galleryContent.scrollLeft;
+  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+  if (scrollLeft === 0) {
+      galleryContent.scrollLeft = maxScrollLeft;
   } else {
-    // Si la vérification est réussie, vous pouvez autoriser la soumission
-    this.removeEventListener('submit', arguments.callee);
-    this.submit();
-    alert("Votre message a été envoyé avec succès !");
+      galleryContent.scrollLeft -= widthGallery;
   }
-});
+}
 
+function next () {
+  const galleryContent = document.querySelector('.galleryContent');
+  const widthGallery = document.querySelector('.gallery').offsetWidth;
+  const scrollLeft = galleryContent.scrollLeft;
+  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+  if (scrollLeft + widthGallery >= maxScrollLeft) {
+      galleryContent.scrollLeft = 0;
+  } else {
+      galleryContent.scrollLeft += widthGallery;
+  }
+}
+
+function openPopup(imageSrc) {
+  const popup = document.createElement('div');
+  popup.className = 'popupPhoto';
+
+  const img = document.createElement('img');
+  img.src = imageSrc;
+
+  const closeBtn = document.createElement('span');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.className = 'popupPhoto-close';
+  closeBtn.onclick = closePopup;
+
+  popup.appendChild(img);
+  popup.appendChild(closeBtn);
+
+  document.body.appendChild(popup);
+}
+
+function closePopup() {
+  const popup = document.querySelector('.popupPhoto');
+  popup.parentNode.removeChild(popup);
+}

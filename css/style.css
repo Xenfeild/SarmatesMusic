@@ -20,6 +20,7 @@
     --title-font-family: 'Lexend Exa', sans-serif;
     --border-radius: 5px;
     --font-size: clamp(12px,1.5vw,2rem);
+    --font-sizeBtn: clamp(12px,1.5vw,1.2rem);
 }
 
 img{
@@ -50,10 +51,10 @@ h2 {
 }
 
 button{
-    font-size: var(--font-size);
+    font-size: var(--font-sizeBtn);
     border-radius: 15px;
     border: none;
-    padding: 1.5vh;
+    padding: 1vh;
     background-color: var(--clr-secondary);
     color: #000000;
 }
@@ -326,6 +327,11 @@ section {
     margin: 1rem 0;
     width: 130px;
   }
+
+  .liveInfoBottom button{
+    margin-bottom: 1rem;
+}
+
   
 
 /* Biography Secton */
@@ -389,9 +395,9 @@ section {
  .paragraph p {
     font-size: clamp(12px,1.5vw,2rem);
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 #imgBio{
@@ -418,6 +424,15 @@ section {
 #galeries {
     background-image: url(../img/Sarmates_fest_logo-29.jpg);
     min-height: 100vh;
+    padding-bottom: 10rem;
+}
+
+#galeries .content h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+    font-family: var(--title-font-family);
+    font-weight: 400;
+    text-shadow: 4px 4px 3px #000000
 }
 
 #galeries .content {
@@ -439,18 +454,53 @@ section {
 }
 
 
-#photos img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
+.gallery{
+height: clamp(150px, 40vw, 500px);
+width: clamp(200px, 80vw, 800px);
+position: relative;
 }
 
-#photos{
-    margin-top: 10rem;
+.galleryNavRight {
+    right: 20px;
+}
+.galleryNavLeft {
+    left: 20px; 
+}
+
+.galleryNav button{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+}
+
+.galleryNav i {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    color: var(--clr-secondary);
+    
+}
+
+.galleryContent{
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--clr-secondary-50);
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.galleryContentItems {
+    height: 100%;
+    min-width: 100%;
+}
+
+.galleryContentItems img{
+    height: 100%;
     width: 100%;
 }
 
@@ -489,7 +539,7 @@ section {
     background-color: #23191da7;
     border-radius: 5px;
     width: 90%;
-    height: 70%;
+    height: 85%;
     position: relative;
     transition: all 0.5s ease-in-out;
     display: flex;
@@ -499,12 +549,23 @@ section {
     backdrop-filter: blur(10px);
   }
 
+.popup2 {
+    margin: 70px auto;
+    background-color: #23191da7;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+  }
+
   .popup h2{
     padding: 1rem;
 }
 
 
-  .popup .close {
+ .close {
     position: absolute;
     top: 0px;
     right: 30px;
@@ -516,6 +577,57 @@ section {
     text-shadow: none;
   }
 
+  /* popup photo */
+
+.popupPhoto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: auto;
+    height:auto; */
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popupPhoto img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.popupPhoto-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.popupPhoto-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.popupPhoto-nav button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popupPhoto-nav button:focus {
+    outline: none;
+}
  
 
   /* #popupSinger img{
@@ -569,8 +681,23 @@ section {
 
 #legalNotice{
     background-image: url(../img/backgroundCompress.jpg);
-    height: 100vh;
+    min-height: 100vh;
+    background-size: cover;
 }
+
+#legalNotice .content2
+{
+    background-color: #00000090;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
+
+#legalNotice h3{
+    margin: 1rem 0;
+    font-size: clamp(22px, 10vw, 3rem);
+    font-weight: 400;
+}
+
 
 /* footer */
 
@@ -614,7 +741,7 @@ footer .socialIcon :hover{
 
 
 footer .newsletter{
-    font-size: clamp(12px, 0.5vw, 1rem);
+    font-size: clamp(12px, 2.5vh, 1.5rem);
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -663,7 +790,7 @@ footer .mentionsLink ul{
 }
 
 footer .mentionsLink li{
-    font-size: clamp(12px, 0.5vw, 1.5rem);
+    font-size: clamp(12px, 2.5vh, 1.5rem);
     margin: 0 .5rem;
 }
 

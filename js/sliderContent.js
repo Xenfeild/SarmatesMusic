@@ -29,9 +29,9 @@ const sliderContent = [
     },
     {
         imageUrl: "muckupSarmatesTshirt.jpg",
-        title: "Want our T-shirt ?",
+        title: "Nos T-shirt ?",
         date: "27 juillet 2023",
-        bouton: "Shop now",
+        bouton: "Voir notre boutique",
         boutonUrl: "#store"
     },
 
