@@ -65,39 +65,39 @@ moreBtn.addEventListener('click', function() {
 
 // validate Contact
 
-// document.getElementById("contactForm").addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   var contactError;
-//   var email = document.getElementById('emailContact');
-//   var surename = document.getElementById('surename');
-//   var name = document.getElementById('name');
-//   var message = document.getElementById('message');
+document.getElementById("contactForm").addEventListener('submit', function (e) {
+  e.preventDefault();
+  var contactError;
+  var email = document.getElementById('emailContact');
+  var surename = document.getElementById('surename');
+  var name = document.getElementById('name');
+  var message = document.getElementById('message');
 
-//   if (!surename.value) {
-//     contactError = "Veuillez entrer votre nom";
-//   } 
+  if (!surename.value) {
+    contactError = "Veuillez entrer votre nom";
+  } 
 
-//   if (!name.value) {
-//     contactError = "Veuillez entrer votre prénom";
-//   }
+  if (!name.value) {
+    contactError = "Veuillez entrer votre prénom";
+  }
 
-//   if (!email.value) {
-//     contactError = "Mettez votre adresse e-mail pour envoyer votre message";
-//   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-//     contactError = "Veuillez entrer une adresse e-mail valide";
-//   }
+  if (!email.value) {
+    contactError = "Mettez votre adresse e-mail pour envoyer votre message";
+  } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
+    contactError = "Veuillez entrer une adresse e-mail valide";
+  }
 
-//   if (contactError) { 
-//     e.preventDefault();
-//     alert(contactError);
-//     return false;
-//   } else {
-//     // Si la vérification est réussie, vous pouvez autoriser la soumission
-//     this.removeEventListener('submit', arguments.callee);
-//     this.submit();
-//     alert("Votre message a été envoyé avec succès !");
-//   }
-// });
+  if (contactError) { 
+    e.preventDefault();
+    alert(contactError);
+    return false;
+  } else {
+    // Si la vérification est réussie, vous pouvez autoriser la soumission
+    this.removeEventListener('submit', arguments.callee);
+    this.submit();
+    alert("Votre message a été envoyé avec succès !");
+  }
+});
 
 // carousel gallery
 
