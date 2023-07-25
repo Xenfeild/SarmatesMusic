@@ -101,38 +101,57 @@ document.getElementById("contactForm").addEventListener('submit', function (e) {
 
 // carousel gallery
 
+// function previous() {
+//   const galleryContent = document.querySelector('.galleryContent');
+//   const widthGallery = document.querySelector('.gallery').offsetWidth;
+//   const scrollLeft = galleryContent.scrollLeft;
+//   const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+//   if (scrollLeft === 0) {
+//       galleryContent.scrollLeft = maxScrollLeft;
+//   } else {
+//       galleryContent.scrollLeft -= widthGallery;
+//   }
+// }
+
+// function next () {
+//   const galleryContent = document.querySelector('.galleryContent');
+//   const widthGallery = document.querySelector('.gallery').offsetWidth;
+//   const scrollLeft = galleryContent.scrollLeft;
+//   const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+//   if (scrollLeft + widthGallery >= maxScrollLeft) {
+//       galleryContent.scrollLeft = 0;
+//   } else {
+//       galleryContent.scrollLeft += widthGallery;
+//   }
+// }
+
 function previous() {
   const galleryContent = document.querySelector('.galleryContent');
   const widthGallery = document.querySelector('.gallery').offsetWidth;
-  const scrollLeft = galleryContent.scrollLeft;
-  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
-
-  if (scrollLeft === 0) {
-      galleryContent.scrollLeft = maxScrollLeft;
-  } else {
-      galleryContent.scrollLeft -= widthGallery;
-  }
+  galleryContent.scrollLeft -= widthGallery;
 }
 
-function next () {
+function next() {
   const galleryContent = document.querySelector('.galleryContent');
   const widthGallery = document.querySelector('.gallery').offsetWidth;
-  const scrollLeft = galleryContent.scrollLeft;
-  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
-
-  if (scrollLeft + widthGallery >= maxScrollLeft) {
-      galleryContent.scrollLeft = 0;
-  } else {
-      galleryContent.scrollLeft += widthGallery;
-  }
+  galleryContent.scrollLeft += widthGallery;
 }
 
-function openPopup(imageSrc) {
+function openPopup(imageSrc, altText) {
   const popup = document.createElement('div');
   popup.className = 'popupPhoto';
 
   const img = document.createElement('img');
   img.src = imageSrc;
+
+  const title = document.createElement('div'); 
+  title.textContent = altText;
+  title.className = 'popupTitle'; 
+
+  const titleText = document.createElement('p'); 
+  titleText.textContent = altText; 
 
   const closeBtn = document.createElement('span');
   closeBtn.innerHTML = '&times;';
@@ -140,6 +159,8 @@ function openPopup(imageSrc) {
   closeBtn.onclick = closePopup;
 
   popup.appendChild(img);
+  title.appendChild(titleText);
+  popup.appendChild(title);
   popup.appendChild(closeBtn);
 
   document.body.appendChild(popup);

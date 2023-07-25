@@ -360,6 +360,8 @@ section {
     padding: .5rem;
     background-color: var(--clr-secondary-50);
     backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    box-shadow: 5px 5px 15px 5px #000000
 }
 
 #biography #lineUp h3 {
@@ -393,7 +395,7 @@ section {
 
 
  .paragraph p {
-    font-size: clamp(12px,1.5vw,2rem);
+    font-size: clamp(12px,1.5vw,1.5rem);
     display: flex;
 }
 
@@ -437,24 +439,45 @@ section {
     flex-direction: column;
 }
 
+/* video section */
+
 #clip {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 1rem;
+}
+
+#clip h4{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+#clip div{
+    margin: 0.5rem;
+    background-color: #00000090;
 }
 
 #clip iframe {
-    width: clamp(200px, 50vw, 500px);
-    height: clamp(150px, 20vw, 300px);
-    margin: 0.5rem;
+    width: clamp(200px, 80vw, 800px);
+    height: clamp(150px, 40vw, 500px);
+  
 }
 
+/* photo gallery */
 
 .gallery{
 height: clamp(150px, 40vw, 500px);
 width: clamp(200px, 80vw, 800px);
 position: relative;
+border: 2px solid transparent;
+}
+
+.gallery:hover {
+    cursor: pointer;
+    border: 2px solid var(--clr-secondary);
 }
 
 .galleryNavRight {
@@ -479,8 +502,7 @@ position: relative;
     width: 50px;
     height: 50px;
     font-size: 2rem;
-    color: var(--clr-secondary);
-    
+    color: var(--clr-secondary);   
 }
 
 .galleryContent{
@@ -489,17 +511,46 @@ position: relative;
     display: flex;
     overflow: hidden;
     scroll-behavior: smooth;
+    object-fit: cover;
+    scroll-snap-type: x mandatory; 
 }
 
 .galleryContentItems {
-    height: 100%;
-    min-width: 100%;
+    flex: 0 0 auto;
+    /* height: 100%;
+    min-width: 100%; */
+    aspect-ratio: 1/1;
+    max-width: 100%;
+    /* margin-right: 10px; */
+    scroll-snap-align: start;
 }
+
+.galleryContentItems:last-child {
+    margin-right: 0; /* Supprimez la marge droite du dernier élément pour éviter un espace supplémentaire */
+}
+
 
 .galleryContentItems img{
     height: 100%;
     width: 100%;
+    object-fit: contain;
 }
+.galleryContentItems.landscape img {
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+}
+
+.galleryContentItems.active img {
+    border: 2px solid red; /* Remplacez cela par le style que vous souhaitez appliquer à l'image active */
+}
+
+/* .popupTitle {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px; /* Ajoutez une marge supérieure pour séparer le titre de l'image */
+/*}*/
+
 
 /* store section */
 
@@ -508,6 +559,18 @@ position: relative;
     min-height: 100vh;
 }
 
+/* special thanks */
+#specialThanks{
+    background-color: #000000;
+    color: #fff;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+#specialThanks a:hover{
+    color: var(--clr-secondary);
+}
 
 
 /* popup */
@@ -576,22 +639,30 @@ position: relative;
 
   /* popup photo */
 
-.popupPhoto {
+  .popupPhoto {
     position: fixed;
     top: 0;
     left: 0;
-    /* width: auto;
-    height:auto; */
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
     z-index: 999;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
+
+
 .popupPhoto img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Utilisez object-fit: contain pour les images portrait */
+    margin-bottom: 10px; /* Ajoute une marge entre l'image et le titre */
 }
 
 .popupPhoto-close {
@@ -625,6 +696,12 @@ position: relative;
 .popupPhoto-nav button:focus {
     outline: none;
 }
+
+.popupTitle {
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+}
  
 
  /* Popup Biography */
@@ -649,7 +726,7 @@ position: relative;
 
 #contactPop input{
     margin: 1rem;
-    width: clamp(200px,50vw, 530px);
+    width: clamp(200px,80vw, 530px);
     height: 30px;
     border: none;
     border-radius: var(--border-radius);
@@ -657,7 +734,7 @@ position: relative;
 }
 
 #contactPop textarea{
-    width: clamp(200px, 50vw, 530px);
+    width: clamp(200px, 80vw, 530px);
     height: 150px;
 }
 
@@ -733,13 +810,23 @@ footer .socialIcon :hover{
 
 
 footer .newsletter{
-    font-size: clamp(12px, 2.5vh, 1.5rem);
+    font-size: clamp(12px, 2.5vh, 1.2rem);
+    font-weight: 400;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    color: var(--clr-secondary);
 }
+/* 
+footer .newsletter p{
+    color: var(--clr-secondary);    
+} */
+
+/* footer .newsletter p:hover{
+    color:  var(--clr-secondary);
+} */
 
 footer .newsletter form{
     display: flex;
@@ -767,7 +854,6 @@ footer input{
 }
 
 footer .newsletter #email{
-    /* width: 200px; */
     height: 20px;
     border: none;
     border-radius: var(--border-radius);
@@ -782,7 +868,7 @@ footer .mentionsLink ul{
 }
 
 footer .mentionsLink li{
-    font-size: clamp(12px, 2.5vh, 1.5rem);
+    font-size: clamp(12px, 2.5vh, 1.2rem);
     margin: 0 .5rem;
 }
 
@@ -840,19 +926,27 @@ footer .footer-link {
         align-items: center;
     }
 
-    .liveInfoTop {
+    .liveInfo{
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
+    }
+
+    /* .liveInfoTop {
+        display: flex;
         width: 100%;
     }
+
+    .liveInfoMiddle {
+        display: flex;
+        width: 100%;
+    }
+
     .liveInfoBottom{
         width: 100%;
         margin-top: 5rem;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+    } */
 
 
     .contentBio .paragraph {
