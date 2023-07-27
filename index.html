@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- <link rel="preload" href="./fnt/parentssuck.ttf" as="font" type="font/ttf" crossorigin> -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/slider.css">
   <link rel="stylesheet" href="css/svgBurger.css">
@@ -23,7 +22,7 @@
 
 <body>
   <header>
-    <a href="#home"><img src="img/logo/logo_sarmates_modified.svg" alt="" id="logo"></a>
+    <a href="#home" title="go home page"><img src="img/logo/logo_sarmates_modified.svg" alt="logo-home" id="logo"></a>
     <div id="burgerIcon" onclick="showMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 200 200">
         <g stroke-width="7" stroke-linecap="round">
@@ -44,13 +43,13 @@
     <!-- nav -->
     <nav id="menu">
       <ul>
-        <li><a href="#news">News</a></li>
-        <li><a href="#live">Live</a></li>
-        <li><a href="#biography">Biographie</a></li>
-        <li><a href="#discography">Discographie</a></li>
-        <li><a href="#galeries">Galeries</a></li>
-        <!-- <li><a href="#store">Store</a></li> -->
-        <li class="mobile-link"><a href="pages/legalNotice.html" class="footer-link">Mentions légales</a></li>
+        <li><a href="#news" title="go to news section">News</a></li>
+        <li><a href="#live" title="go to live section">Live</a></li>
+        <li><a href="#biography" title="go to biography section">Biographie</a></li>
+        <li><a href="#discography" title="go to discography section">Discographie</a></li>
+        <li><a href="#galeries" title="go to gallery section">Galeries</a></li>
+        <!-- <li><a href="#store" title="go to stor page">Store</a></li> -->
+        <li class="mobile-link"><a href="pages/legalNotice.html" title="go to legal notice page" class="footer-link">Mentions légales</a></li>
         <!-- <li class="mobile-link"><a href="" class="footer-link">CGU</a></li> -->
       </ul>
     </nav>
@@ -92,6 +91,7 @@
       <h2>Live</h2>
       <div class="content">
         <div class="container" id="containerMore">
+
           <!-- live info 1 -->
           <div class="liveInfo">
             <div class="liveInfoTop">
@@ -103,11 +103,12 @@
             </div>
             <div class="liveInfoBottom">
               <h4>Samedi 3 juin 2023</h4>
-              <a href="http://www.northfest.fr/">
-                <button>Voir l'événement</button>
+              <a href="http://www.northfest.fr/" title="go to northfest website">
+                <button title="go event button">Voir l'événement</button>
               </a>
             </div>
           </div>
+
           <!-- live info 2 -->
           <div class="liveInfo"> 
             <div class="liveInfoTop">
@@ -119,11 +120,12 @@
             </div>
             <div class="liveInfoBottom">
               <h4>Samedi 01 Octobre 2022</h4>
-              <a href="https://www.facebook.com/events/803652970980840/">
-              <button>Voir l'événement</button>
+              <a href="https://www.facebook.com/events/803652970980840/" title="go to facebook envent page">
+              <button title="go event button">Voir l'événement</button>
               </a>
             </div>
           </div>
+
           <!-- live info 3 -->
           <div class="liveInfo"> 
             <div class="liveInfoTop">
@@ -135,15 +137,15 @@
             </div>
             <div class="liveInfoBottom">
               <h4>Samedi 11 juin 2022</h4>
-              <a href="http://www.northfest.fr/">
-              <button>Voir l'événement</button>
+              <a href="http://www.northfest.fr/" title="go to northfest website">
+              <button title="go event button">Voir l'événement</button>
             </a>
             </div>
           </div>
         </div>
       </div>
       <div class="externalBtn">
-        <button id="moreBtn">Voir plus</button>
+        <button id="moreBtn" title="see more button">Voir plus</button>
       </div>
     </section>
 
@@ -152,6 +154,7 @@
       <h2>Biographie</h2>
       <div class="content">
         <div class="container">
+
           <!-- biography Content -->
           <div class="paragraph">
             <p>Sarmates nous invite à un surprenant voyage sonore et visuel à travers des inspirations issues des
@@ -161,35 +164,36 @@
             perse.</p>
             <img src="img/Fire.jpg" alt="" id="imgBio">
           </div>
-          <a href="#popupBio"><button>Voir la biographie commplète</button></a>
+          <a href="#popupBio" title="open popup biography"><button title="see all biography button">Voir la biographie commplète</button></a>
         </div>
+
         <!-- Linup popUp links-->
         <div id="lineUp">
           <h2>Line Up</h2>
           <div id="lineUpContent">
             <div>
               <h3>Laurent Broda</h3>
-              <a href="#popupSinger"><img src="img/concert-85.jpg" alt="" id="imgLineUp"></a>
+              <a href="#popupSinger" title="open popup singer biography"><img src="img/concert-85.jpg" alt="" id="imgLineUp"></a>
               <p>Lead vocals / Sarmata</p>
             </div>
             <div>
               <h3>Davoriin Sirok</h3>
-              <a href="#popupSarmata"><img src="img/Sarmates_fest_logo-13.jpg" alt="" id="imgLineUp"></a>
+              <a href="#popupSarmata" title="open popup sarmata biography"><img src="img/Sarmates_fest_logo-13.jpg" alt="" id="imgLineUp"></a>
               <p>Sarmata / Back vocals</p>
             </div>
             <div>
               <h3>Jérémy Debrix</h3>
-              <a href="#popupGuitar"><img src="img/Sarmates_fest_logo-4.jpg" alt="" id="imgLineUp"></a>
+              <a href="#popupGuitar" title="open popup guitarist biography"><img src="img/Sarmates_fest_logo-4.jpg" alt="" id="imgLineUp"></a>
               <p>Lead Guitar</p>
             </div>
             <div>
               <h3>Antonio Xenfeild</h3>
-              <a href="#popupBass"><img src="img/Sarmates_fest_logo-37.jpg" alt="" id="imgLineUp"></a>
+              <a href="#popupBass" title="open popup bassman biography"><img src="img/Sarmates_fest_logo-37.jpg" alt="" id="imgLineUp"></a>
               <p>Bass Guitar</p>
             </div>
             <div>
               <h3>Jérémy Marie</h3>
-              <a href="#popupDrum"><img src="img/Sarmates_fest_logo (5).jpg" alt="" id="imgLineUp"></a>
+              <a href="#popupDrum" title="open popup drummer biography"><img src="img/Sarmates_fest_logo (5).jpg" alt="" id="imgLineUp"></a>
               <p>Drums</p>
             </div>
           </div>
@@ -200,6 +204,7 @@
     <!-- discography section -->
     <section id="discography">
       <h2>Discographie</h2>
+
       <!-- coming soon -->
       <div class="soon">
         <h3>Coming soon</h3>
@@ -210,6 +215,7 @@
     <section id="galeries" class="paralax">
       <h2>Galeries</h2>
       <div class="content">
+
         <!-- clip -->
         <h3>Clip</h3>
         <div id="clip">
@@ -222,14 +228,18 @@
           <iframe src="https://www.youtube-nocookie.com/embed/PmH27yiXOk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div> 
+
         <!-- photo -->
         <h3>Photos</h3>
         <div class="gallery">
           <div class="galleryNav">
-              <button onclick="previous()" class="galleryNavLeft"><i class="fa-solid fa-circle-arrow-left"></i></button>
-              <button onclick="next()" class="galleryNavRight"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
+              <button onclick="previous()" class="galleryNavLeft" title="previous photo"><i class="fa-solid fa-circle-arrow-left" ></i></button>
+              <button onclick="next()" class="galleryNavRight" title="next photo"><i class="fa-solid fa-circle-arrow-right"></i></i></button>
           </div>
           <div class="galleryContent">
+            <div class="galleryContentItems">
+              <img src="img/Sarmates_shoot_logo-9.jpg" alt="" onclick="openPopup(this.src)">
+            </div>
             <div class="galleryContentItems">
                 <img src="img/Sarmates_fest_logo-14.jpg" alt="alt description" id="" onclick="openPopup(this.src)">
             </div>
@@ -278,15 +288,12 @@
             <div class="galleryContentItems">
                 <img src="img/Sarmates_fest_logo_drum.jpg" alt="" onclick="openPopup(this.src)">
             </div>
-            <div class="galleryContentItems">
-                <img src="img/Sarmates_shoot_logo-9.jpg" alt="" onclick="openPopup(this.src)">
-            </div>
+          </div>
         </div>
-      </div>
     </section>
 
     <section id="specialThanks">
-      <p>Photographie : <a href="https://www.instagram.com/emyphotographierouen/?hl=fr">Emy Photographie</a></p>
+      <p>Photographie : <a href="https://www.instagram.com/emyphotographierouen/?hl=fr" title="go to Emy Photographie instagram page">Emy Photographie</a></p>
     </section>
 
   <!-- store section -->
@@ -304,7 +311,8 @@
     <div class="popup">  
       <h2>Biographie</h2>
       <a class="close" href="#">&times;</a>
-        <!-- text Biography -->
+
+      <!-- text Biography -->
       <div class="contentBio">
         <div class="paragraph">
           <p>Sarmates nous invite à un surprenant voyage sonore et visuel à travers des inspirations issues des
@@ -349,6 +357,7 @@
       </div>
     </div>
   </div>
+
   <!-- Popup Sarmata Davoriin Sirok  -->
   <div id="popupSarmata" class="overlay">
     <div class="popup">  
@@ -362,6 +371,7 @@
       </div>
     </div>
   </div>  
+
    <!--popup Guitar Jeremy Debrix -->
   <div id="popupGuitar" class="overlay">
     <div class="popup">  
@@ -376,6 +386,7 @@
       </div>
     </div>
   </div> 
+
   <!-- popup Bass Guitar Antonio Xenfeild -->
    <div id="popupBass" class="overlay">
     <div class="popup">  
@@ -389,6 +400,7 @@
       </div>
     </div>
   </div> 
+
   <!-- popup Drum Jeremy Marie -->
   <div id="popupDrum" class="overlay">
     <div class="popup">  
@@ -408,7 +420,7 @@
     <div class="popup2">
     <a class="close" href="#">&times;</a>
       <div class="content">
-        <iframe width="540" height="610" src="https://34c97f4b.sibforms.com/serve/MUIFAB2884Ld5A4DRjimRl1u5NWo8jh3nJJSUN9GVoMm8eGSc34nkhiml7KOCznjUqo_25JeH4UNLKI0cBsg6X7Lej12yHt0ReXp1u_Ox687je_vB0Sb7xPE7i0T27UvwBFY8Cp7ExqoEYPUYwjlahvn_WLGtRdA5nSums5HNNYBnLrls62DrxTXy39TFUWYKe7maZySXLR2cMnL" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+        <iframe width="540" height="650" src="https://7acde5b9.sibforms.com/serve/MUIFADi0CDRNi6QUyRz6sLb1AW41tts9qMus_bCOdMnRuxZpqDGFcWGJgxI7Z3q29aOX0fqxowckE_EHgk3GojQBfCIcAo2p7tCJeuuuzcSOn9m_V20R__L5LReOF56nKbyXB9QbaYHOI334nQ4pA7xQm4iUUN_iiUtL6EOYdIob0dVi-eulMAj0a3q-jyi3-5mtto6YAjCPGAvP" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
       </div>
     </div>
   </div>
@@ -448,17 +460,20 @@
 
   <!-- footer -->
   <footer>
+
     <!-- social icons div -->
     <div class="socialIcon">
-      <a href="https://www.facebook.com/sarmates"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/sarmates.music/?hl=fr"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@SarmatesMusic"><i class="fa-brands fa-youtube"></i></a>
-      <a href="#contactPop"><i class="fa-sharp fa-solid fa-envelope"></i></a>
+      <a href="https://www.facebook.com/sarmates"><i class="fa-brands fa-facebook" alt="facebook"></i></a>
+      <a href="https://www.instagram.com/sarmates.music/?hl=fr"><i class="fa-brands fa-instagram" alt="instagram"></i></a>
+      <a href="https://www.youtube.com/@SarmatesMusic"><i class="fa-brands fa-youtube" alt="youtube"></i></a>
+      <a href="#contactPop"><i class="fa-sharp fa-solid fa-envelope" alt="contact_form"></i></a>
     </div>
+
     <!-- newsletter div -->
     <div class="newsletter">
-      <a href="#popupNewsletter"><button>Newsletter</button></a>
+      <a href="#popupNewsletter"><button title="Newsletter button">Newsletter</button></a>
     </div>
+    
     <!-- legal mentions -->
     <nav class="mentionsLink">
       <ul>

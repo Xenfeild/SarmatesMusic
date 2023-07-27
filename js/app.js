@@ -31,37 +31,6 @@ moreBtn.addEventListener('click', function() {
   }
 });
 
-// validate Newsletter
-
-// document.getElementById("sib-form").addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   var error;
-//   var email = document.getElementById('EMAIL');
-//   var checkNewsletter = document.getElementById("OPT_IN");
-
-//   if (!email.value) {
-//     error = "Mettez votre adresse e-mail pour recevoir la newsletter";
-//   } else if (email.value.indexOf("@") === -1 || email.value.indexOf(".") === -1) {
-//     error = "Veuillez entrer une adresse e-mail valide";
-//   }
-
-//   if (!checkNewsletter.checked) {
-//     error = "Veuillez valider la case de confirmation pour recevoir votre newsletter";
-//   }
-
-//   if (error) { 
-//     // e.preventDefault();
-//     alert(error);
-//     return false;
-//   } else {
-//     // Si la vérification est réussie, vous pouvez autoriser la soumission
-//     this.removeEventListener('submit', arguments.callee);
-//     this.submit();
-//     alert("Vous êtes inscrit à la newsletter");
-    
-//   }
-// });
-
 
 // validate Contact
 
@@ -101,44 +70,34 @@ document.getElementById("contactForm").addEventListener('submit', function (e) {
 
 // carousel gallery
 
-// function previous() {
-//   const galleryContent = document.querySelector('.galleryContent');
-//   const widthGallery = document.querySelector('.gallery').offsetWidth;
-//   const scrollLeft = galleryContent.scrollLeft;
-//   const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
-
-//   if (scrollLeft === 0) {
-//       galleryContent.scrollLeft = maxScrollLeft;
-//   } else {
-//       galleryContent.scrollLeft -= widthGallery;
-//   }
-// }
-
-// function next () {
-//   const galleryContent = document.querySelector('.galleryContent');
-//   const widthGallery = document.querySelector('.gallery').offsetWidth;
-//   const scrollLeft = galleryContent.scrollLeft;
-//   const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
-
-//   if (scrollLeft + widthGallery >= maxScrollLeft) {
-//       galleryContent.scrollLeft = 0;
-//   } else {
-//       galleryContent.scrollLeft += widthGallery;
-//   }
-// }
-
 function previous() {
   const galleryContent = document.querySelector('.galleryContent');
   const widthGallery = document.querySelector('.gallery').offsetWidth;
-  galleryContent.scrollLeft -= widthGallery;
+  const scrollLeft = galleryContent.scrollLeft;
+  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+  if (scrollLeft === 0) {
+      galleryContent.scrollLeft = maxScrollLeft;
+  } else {
+      galleryContent.scrollLeft -= widthGallery;
+  }
 }
 
-function next() {
+function next () {
   const galleryContent = document.querySelector('.galleryContent');
   const widthGallery = document.querySelector('.gallery').offsetWidth;
-  galleryContent.scrollLeft += widthGallery;
+  const scrollLeft = galleryContent.scrollLeft;
+  const maxScrollLeft = galleryContent.scrollWidth - galleryContent.clientWidth;
+
+  if (scrollLeft + widthGallery >= maxScrollLeft) {
+      galleryContent.scrollLeft = 0;
+  } else {
+      galleryContent.scrollLeft += widthGallery;
+  }
 }
 
+
+// popup image gallery
 function openPopup(imageSrc, altText) {
   const popup = document.createElement('div');
   popup.className = 'popupPhoto';

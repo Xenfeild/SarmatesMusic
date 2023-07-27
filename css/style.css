@@ -226,6 +226,7 @@ section {
   .externalBtn button {
     padding: 0.5rem 1rem;
     margin: 1rem;
+    cursor: pointer;
   }
 
 /* temporary comming soon class */
@@ -257,12 +258,8 @@ section {
 }
 
 #news .content .card {
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-    /* transition: 0.3s; */
     width: 200px;
     padding: .5rem;
-    /* margin: .5rem; */
-    /* overflow: hidden; */
 }
 
 .newsImg img {
@@ -273,7 +270,6 @@ section {
 
 .card:hover {
     cursor: pointer;
-    /* filter: saturate(5) hue-rotate(4deg); */
     border: 2px solid var(--clr-secondary);
 }
 
@@ -301,6 +297,7 @@ section {
     margin: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 90%;
     text-align: center;
@@ -325,11 +322,18 @@ section {
   
   .liveInfo img {
     margin: 1rem 0;
-    width: 130px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
   }
+  .liveInfoTop {
+    width: 50px;
+
+}
 
   .liveInfoBottom button{
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
   
@@ -382,7 +386,6 @@ section {
 
 #biography #lineUp #lineUpContent div:hover{
     cursor: pointer;
-    /* filter: saturate(5) hue-rotate(4deg); */
     border: 2px solid var(--clr-secondary);
 }
 
@@ -414,7 +417,7 @@ section {
 /* discography Section */
 
 #discography {
-    background-image: url(../img/concert-14.jpg);
+    background-image: url(../img/sarmates-site-1.jpg);
     min-height: 100vh;
 }
 
@@ -495,7 +498,6 @@ border: 2px solid transparent;
     transform: translateY(-50%);
     cursor: pointer;
     transition: 0.3s all ease-in-out;
-
 }
 
 .galleryNav i {
@@ -517,16 +519,9 @@ border: 2px solid transparent;
 
 .galleryContentItems {
     flex: 0 0 auto;
-    /* height: 100%;
-    min-width: 100%; */
     aspect-ratio: 1/1;
     max-width: 100%;
-    /* margin-right: 10px; */
     scroll-snap-align: start;
-}
-
-.galleryContentItems:last-child {
-    margin-right: 0; /* Supprimez la marge droite du dernier élément pour éviter un espace supplémentaire */
 }
 
 
@@ -537,19 +532,19 @@ border: 2px solid transparent;
 }
 .galleryContentItems.landscape img {
     height: auto;
-    width: 100%;
+    width: auto;
     max-height: 100%;
 }
 
 .galleryContentItems.active img {
-    border: 2px solid red; /* Remplacez cela par le style que vous souhaitez appliquer à l'image active */
+    border: 2px solid red; 
 }
 
-/* .popupTitle {
+.popupTitle {
     font-weight: bold;
     text-align: center;
-    margin-top: 10px; /* Ajoutez une marge supérieure pour séparer le titre de l'image */
-/*}*/
+    margin-top: 10px; 
+}
 
 
 /* store section */
@@ -615,6 +610,7 @@ border: 2px solid transparent;
     position: relative;
     transition: all 0.5s ease-in-out;
     display: flex;
+    height: 85vh;
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(10px);
@@ -646,8 +642,8 @@ border: 2px solid transparent;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
+    justify-content: center; 
+    align-items: center; 
     z-index: 999;
     height: 100%;
     width: 100%;
@@ -660,9 +656,9 @@ border: 2px solid transparent;
 
 .popupPhoto img {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Utilisez object-fit: contain pour les images portrait */
-    margin-bottom: 10px; /* Ajoute une marge entre l'image et le titre */
+    max-height: calc(100vh - 40px);;
+    object-fit: contain;
+    margin-bottom: 10px; 
 }
 
 .popupPhoto-close {
@@ -695,6 +691,7 @@ border: 2px solid transparent;
 
 .popupPhoto-nav button:focus {
     outline: none;
+    cursor: pointer;
 }
 
 .popupTitle {
@@ -752,6 +749,7 @@ border: 2px solid transparent;
     background-image: url(../img/backgroundCompress.jpg);
     min-height: 100vh;
     background-size: cover;
+    padding-bottom: 5rem;
 }
 
 #legalNotice .content2
@@ -763,7 +761,7 @@ border: 2px solid transparent;
 
 #legalNotice h3{
     margin: 1rem 0;
-    font-size: clamp(22px, 10vw, 3rem);
+    font-size: clamp(22px, 10vw, 2.2rem);
     font-weight: 400;
 }
 
@@ -791,7 +789,6 @@ footer .socialIcon{
     color: var(--main-text-color);
     display: flex;
     justify-content: space-around;
-    /* font-size: 1.2rem; */
 }
 
  i {
@@ -819,45 +816,9 @@ footer .newsletter{
     align-items: center;
     color: var(--clr-secondary);
 }
-/* 
-footer .newsletter p{
-    color: var(--clr-secondary);    
-} */
 
-/* footer .newsletter p:hover{
-    color:  var(--clr-secondary);
-} */
-
-footer .newsletter form{
-    display: flex;
-    font-family: var(--text-font-family);
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-footer .newsletter form div{
-    display: block
-}
-
-footer form div {
-    display: flex;
-    align-items: center;
-}
-
-input[type="checkbox"]:checked {
-    background-color: #ff9634;
-}
-
-footer input{
-    margin: 0.2rem;
-}
-
-footer .newsletter #email{
-    height: 20px;
-    border: none;
-    border-radius: var(--border-radius);
-    padding-left: 10px;
+.newsletter button{
+    cursor: pointer;
 }
 
 
@@ -933,20 +894,25 @@ footer .footer-link {
         justify-content: space-between;
     }
 
-    /* .liveInfoTop {
+    .liveInfoTop {
         display: flex;
-        width: 100%;
+        width: 30%;
+    }
+
+    .liveInfoTop img{
+        max-height: 200px;
+        max-width: 200px;
     }
 
     .liveInfoMiddle {
-        display: flex;
-        width: 100%;
+        width: 30%;
+        text-align: center;
     }
 
     .liveInfoBottom{
-        width: 100%;
+        width: 30%;
         margin-top: 5rem;
-    } */
+    } 
 
 
     .contentBio .paragraph {
@@ -960,13 +926,9 @@ footer .footer-link {
     
     
     #news .content .card {
-        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-        /* transition: 0.3s; */
         width: 400px;
         aspect-ratio: 1;
         padding: .5rem;
-        /* margin: .5rem; */
-        /* overflow: hidden; */
     }
     .containerCard h4{
         font-size: 1.5rem;

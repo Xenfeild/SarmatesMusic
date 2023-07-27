@@ -1,7 +1,7 @@
 const sliderContent = [
     {
         imageUrl: "backgroundCompress.jpg",
-        title: "Welcome to Sarmates",
+        title: "Sarmates-Music.com",
         date: "27 juillet 2023",
         bouton: "",
         boutonUrl: ""

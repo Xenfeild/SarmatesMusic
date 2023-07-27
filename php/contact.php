@@ -30,7 +30,12 @@ $status = 200;
 $srvMsg = "Le message est transmis";
 
 // reading IP and  date in the database
-$historique = $pdo->query('SELECT ip, authTime FROM '.$table.' WHERE ip="'.$userIp.'" AND authTime>"'.$dateReq.'";');
+$historique = $pdo->prepare('SELECT ip, authTime FROM '.$table.' WHERE (ip = :userIp OR mail = :email) AND authTime > :dateReq');
+$historique->execute(array(
+    'userIp' => $userIp,
+    'email' => trim(htmlspecialchars($_POST['email'])),
+    'dateReq' => $dateReq
+));
 while ($donnees = $historique->fetch())
 {
     if(($donnees['ip'] == $userIp) && ($donnees['authTime'] > $dateReq)) {
@@ -42,10 +47,10 @@ while ($donnees = $historique->fetch())
 $historique->closeCursor(); // Fin de traitement historique
 
 if($status == 200){
-    //préparation requette écriture
+    //writting request preparation
     $req = $pdo->prepare("INSERT INTO $table (ip, authTime, prenom, nom, mail, society, message)
         VALUES(:userIp, :dateAut, :prenom, :nom, :mail, :society, :message)");
-    //Ecriture dans la BDD
+    //wrtiting in the database
     $req->execute(array(
         'userIp' => $userIp,
         'dateAut' => $dateAut,
